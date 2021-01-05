@@ -1,5 +1,6 @@
 .header{
   position:relative;
+  overflow:hidden;
   background: #0E0E0E;
   padding-top:50px;
   min-height:100vh;
@@ -32,4 +33,32 @@
 .btnGroup{
   display:flex;
   align-items:center;
+}
+
+.bg1{
+  position:absolute;
+  z-index:1;
+  top:0;
+  right:0;
+}
+
+.bg2{
+  background: linear-gradient(227.75deg, #303030 -139.11%, #101010 100%);
+  opacity: 0.3;
+  width:150px;
+  height:150px;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+
+.bg2Inner{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:75px;
+  height:75px;
+  background: linear-gradient(227.75deg, #303030 -139.11%, #101010 100%);
+  opacity: 0.5;
+  box-shadow: 17px -19px 23px rgba(0, 0, 0, 0.36);
 }

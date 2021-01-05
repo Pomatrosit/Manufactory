@@ -3,19 +3,23 @@ import {useRef} from "react";
 const Button = ({css, text, clickHandler}) => {
 
   const buttonBackgroundRef = useRef();
+  const buttonCircleRef = useRef();
 
   const onMouseEnter = () => {
-    buttonBackgroundRef.current.style.animation = "button-background-open-animation 0.5s linear forwards";
+    buttonBackgroundRef.current.style.animation = "button-background-open-animation 1s linear forwards";
+    buttonCircleRef.current.style.animation = "button-circle-animation 0.25s ease-in";
   }
 
   const onMouseLeave = () => {
-    buttonBackgroundRef.current.style.animation = "button-background-close-animation 0.5s linear forwards";
+    buttonBackgroundRef.current.style.animation = "button-background-close-animation 1s linear forwards";
+    buttonCircleRef.current.style.animation = "none";
   }
 
   return(
     <>
     <div className="button" onClick = {clickHandler} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
        <div ref = {buttonBackgroundRef} className="button-background"></div>
+       <div ref = {buttonCircleRef} className="button-circle"></div>
        <span>{text}</span>
     </div>
 
@@ -39,6 +43,17 @@ const Button = ({css, text, clickHandler}) => {
         top:0;left:0;right:0;bottom:0;
         z-index:0;
         cursor:pointer;
+      }
+
+      .button-circle{
+        position:absolute;
+        z-index:1;
+        background:black;
+        height:50px;
+        width:50px;
+        opacity:0.06;
+        transform:scale(0);
+        border-radius:50%;
       }
 
       .button span{

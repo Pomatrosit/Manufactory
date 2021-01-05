@@ -1,3 +1,4 @@
+import NavLink from "./navLink";
 import style from "./nav.module.css";
 
 const Nav = () => {
@@ -10,11 +11,11 @@ const Nav = () => {
       </div>
 
       <ul className={style.links}>
-        <li className={style.link}>Портфолио</li>
-        <li className={style.link}>Цены</li>
-        <li className={style.link}>Контакты</li>
-        <li className={style.link}>Статьи</li>
-        <li className={style.link}>Компания</li>
+        <NavLink text="Портфолио"/>
+        <NavLink text="Цены"/>
+        <NavLink text="Контакты"/>
+        <NavLink text="Статьи"/>
+        <NavLink text="Компания"/>
       </ul>
 
     </nav>

@@ -5,6 +5,10 @@ import style from "./header.module.css";
 const Header = () => {
   return(
      <section className={style.header}>
+
+       <img src="/img/bg.png" alt="background" className={style.bg1}/>
+       <div className={style.bg2}><div className={style.bg2Inner}></div></div>
+
        <div className="app-wrapper">
 
          <Nav />
