@@ -1,0 +1,35 @@
+.header{
+  position:relative;
+  background: #0E0E0E;
+  padding-top:50px;
+  min-height:100vh;
+}
+
+.headerMain{
+  margin:110px 0 0 110px;
+}
+
+.title{
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 62px;
+  color: #FFFFFF;
+  width:100%;
+  max-width:600px;
+  margin-bottom:43px;
+}
+
+.subtitle{
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: #FFFFFF;
+  width:100%;
+  max-width:420px;
+  margin-bottom: 50px;
+}
+
+.btnGroup{
+  display:flex;
+  align-items:center;
+}

@@ -1,0 +1,17 @@
+@keyframes button-background-open-animation{
+  0%{
+    opacity:1;
+  }
+  100%{
+    opacity:0.3;
+  }
+}
+
+@keyframes button-background-close-animation{
+  0%{
+    opacity:0.3;
+  }
+  100%{
+    opacity:1;
+  }
+}
