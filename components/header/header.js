@@ -2,7 +2,8 @@ import Nav from "../nav/nav";
 import Button from "../button/button";
 import style from "./header.module.css";
 
-const Header = () => {
+const Header = ({openModal}) => {
+
   return(
      <section className={style.header}>
 
