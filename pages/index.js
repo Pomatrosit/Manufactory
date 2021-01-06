@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import DefaultLayout from "../components/defaultLayout/defaultLayout";
 import Header from "../components/header/header";
+import Advantages from "../components/advantages/advantages";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
 
       <DefaultLayout>
          <Header />
+         <Advantages />
       </DefaultLayout>
     </>
   )

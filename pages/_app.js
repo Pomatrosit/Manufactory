@@ -1,5 +1,7 @@
 import '../styles/normalize.css';
 import '../public/gilroy/stylesheet.css';
+import '../public/sfpro/stylesheet.css';
+import '../public/geometria/stylesheet.css';
 import '../styles/globals.css';
 import '../styles/animations.css';
 

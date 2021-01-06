@@ -21,10 +21,42 @@ a {
   box-sizing: border-box;
 }
 
+section{
+  position:relative;
+}
+
 .app-wrapper{
   width:95%;
   max-width:1200px;
   margin:0 auto;
   position:relative;
   z-index:10;
+}
+
+.section__subtitle, .section__title{
+  text-transform: uppercase;
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.section__subtitle{
+  font-weight: bold;
+  font-size: 16px;
+  color: #684289;
+}
+
+.section__title{
+  font-weight: 800;
+  font-size: 36px;
+  color: #492A64;
+}
+
+.section__description{
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 24px;
+  line-height: 125%;
+  color: #6D6476;
+  text-align: center;
+  max-width:650px;
+  margin:0 auto;
 }

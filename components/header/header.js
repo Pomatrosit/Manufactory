@@ -1,13 +1,23 @@
 import Nav from "../nav/nav";
 import Button from "../button/button";
 import style from "./header.module.css";
+import {useEffect, useRef} from "react";
 
 const Header = ({openModal}) => {
+
+  const imageRef = useRef();
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      imageRef.current.style.transform =  `translateY(${100 - window.pageYOffset/20}px)`
+    });
+  }, []);
 
   return(
      <section className={style.header}>
 
        <img src="/img/bg.png" alt="background" className={style.bg1}/>
+
        <div className={style.bg2}><div className={style.bg2Inner}></div></div>
 
        <div className="app-wrapper">
@@ -36,6 +46,10 @@ const Header = ({openModal}) => {
               }}
               text="Что делаем"/>
            </div>
+         </div>
+
+         <div className={style.headerImg} ref= {imageRef}>
+           <span style={{fontSize:30}}>SOME AWESOME IMAGE</span>
          </div>
 
        </div>
