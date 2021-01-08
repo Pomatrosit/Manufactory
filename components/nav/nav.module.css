@@ -8,6 +8,7 @@
 .logo{
   display:flex;
   align-items:center;
+  flex-grow:1;
 }
 
 .logoFirstImg{
@@ -38,4 +39,18 @@
   bottom:-10px;
   transform:scaleX(0);
   transition:0.2s;
+}
+
+.switcher{
+  color:#fff;
+  margin-left:40px;
+  display:flex;
+  position:relative;
+}
+
+.switcherLink{
+  font-size:20px;
+  margin-left:10px;
+  cursor:pointer;
+  text-transform: uppercase;
 }

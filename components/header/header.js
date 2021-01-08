@@ -2,14 +2,16 @@ import Nav from "../nav/nav";
 import Button from "../button/button";
 import style from "./header.module.css";
 import {useEffect, useRef} from "react";
+import useTranslation from 'next-translate/useTranslation';
 
 const Header = ({openModal}) => {
 
+  const { t } = useTranslation("home");
   const imageRef = useRef();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      imageRef.current.style.transform =  `translateY(${100 - window.pageYOffset/20}px)`
+      if (imageRef.current) imageRef.current.style.transform =  `translateY(${100 - window.pageYOffset/20}px)`;
     });
   }, []);
 
@@ -25,7 +27,7 @@ const Header = ({openModal}) => {
          <Nav />
 
          <div className={style.headerMain}>
-           <h1 className={style.title}>Студия веб-разработки и дизайна.</h1>
+           <h1 className={style.title}>{t("title")}</h1>
            <h2 className={style.subtitle}>Полный цикл создания и сопровождения digital продуктов любой сложности</h2>
            <div className={style.btnGroup}>
              <Button
@@ -34,7 +36,8 @@ const Header = ({openModal}) => {
                  height:"50px",
                  background:"#684289",
                  boxShadow:"4px 4px 5px rgba(0, 0, 0, 0.25)",
-                 margin:"0 16px 0 0"
+                 margin:"0 16px 0 0",
+                 fontSize:"19px"
                }}
                text="Смотреть работы"/>
              <Button
@@ -42,7 +45,8 @@ const Header = ({openModal}) => {
                 width:"200px",
                 height:"50px",
                 background:"#D4B57F",
-                boxShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)"
+                boxShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)",
+                fontSize:"19px"
               }}
               text="Что делаем"/>
            </div>

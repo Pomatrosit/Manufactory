@@ -1,4 +1,5 @@
 import NavLink from "./navLink";
+import LanguageSwitcher from "./languageSwitcher";
 import style from "./nav.module.css";
 
 const Nav = () => {
@@ -17,6 +18,8 @@ const Nav = () => {
         <NavLink text="Статьи"/>
         <NavLink text="Компания"/>
       </ul>
+
+      <LanguageSwitcher />
 
     </nav>
   )

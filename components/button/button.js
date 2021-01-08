@@ -57,10 +57,10 @@ const Button = ({css, text, clickHandler}) => {
       }
 
       .button span{
+        font-size:${css.fontSize || "19px"};
         position:relative;
         z-index:10;
         font-weight: 500;
-        font-size: 19px;
         color: #FFFFFF;
       }
       `}</style>

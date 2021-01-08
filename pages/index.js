@@ -3,7 +3,7 @@ import DefaultLayout from "../components/defaultLayout/defaultLayout";
 import Header from "../components/header/header";
 import Advantages from "../components/advantages/advantages";
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Head>
@@ -18,3 +18,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home
