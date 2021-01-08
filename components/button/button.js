@@ -6,8 +6,10 @@ const Button = ({css, text, clickHandler}) => {
   const buttonCircleRef = useRef();
 
   const onMouseEnter = () => {
-    buttonBackgroundRef.current.style.animation = "button-background-open-animation 1s linear forwards";
-    buttonCircleRef.current.style.animation = "button-circle-animation 0.25s ease-in";
+    if (document.documentElement.clientWidth > 768){
+      buttonBackgroundRef.current.style.animation = "button-background-open-animation 1s linear forwards";
+      buttonCircleRef.current.style.animation = "button-circle-animation 0.25s ease-in";
+    }
   }
 
   const onMouseLeave = () => {

@@ -28,7 +28,7 @@ const Header = ({openModal}) => {
 
          <div className={style.headerMain}>
            <h1 className={style.title}>{t("title")}</h1>
-           <h2 className={style.subtitle}>Полный цикл создания и сопровождения digital продуктов любой сложности</h2>
+           <h2 className={style.subtitle}>Полный цикл создания и сопровождения сайтов любой сложности</h2>
            <div className={style.btnGroup}>
              <Button
                css={{

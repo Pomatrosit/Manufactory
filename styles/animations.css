@@ -84,3 +84,21 @@
   from{transform:scaleX(1)}
   to{transform:scaleX(0)}
 }
+
+@keyframes fixed-block-to-right {
+  0%{
+    transform:translateX(0) skew(5deg);
+  }
+  100%{
+    transform:translateX(100%) skew(-5deg);
+  }
+}
+
+@keyframes fixed-block-to-left {
+  0%{
+    transform:translateX(100%) skew(-5deg);
+  }
+  100%{
+    transform:translateX(0) skew(5deg);
+  }
+}

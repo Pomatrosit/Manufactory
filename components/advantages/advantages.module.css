@@ -1,5 +1,5 @@
 .advantages{
-  margin-bottom:230px;
+  margin-bottom:30px;
   overflow:hidden;
 }
 
@@ -26,16 +26,12 @@
 
 .servicesItem{
   display:flex;
+  align-items: flex-start;
   width:46%;
   margin-bottom:45px;
 }
 
 .servicesItem__img{
-  background: #C4C4C4;
-  width: 58px;
-  height: 58px;
-  border-radius:50%;
-  min-width:58px;
   margin-right:34px;
 }
 

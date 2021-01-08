@@ -1,0 +1,64 @@
+.servicesTop{
+  overflow:hidden;
+  padding-top:40px;
+  perspective:2000px;
+}
+
+.servicesMain{
+  position:relative;
+}
+
+.topBlock{
+  position:relative;
+  padding:120px 0 170px 0;
+  background: linear-gradient(178.5deg, #F4F4F4 1.28%, #FFFFFF 98.72%);
+}
+
+.mainBlock{
+  position:relative;
+}
+
+.mainBlock__step{
+  padding-top:100px;
+  font-family: 'SF Pro Display', sans-serif;
+  width:40%;
+  height:900px;
+}
+
+.toRight{
+  margin-left:auto;
+}
+
+.mainBlock__subtitle{
+  font-weight: bold;
+  font-size: 18px;
+  color: #ECB960;
+  margin-bottom: 60px;
+}
+
+.mainBlock__title{
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: #492A64;
+  margin-bottom:60px;
+}
+
+.mainBlock__text{
+  font-size: 18px;
+  line-height: 150%;
+  color: #6D6476;
+}
+
+.services__fixed{
+  position:absolute;
+  top:570px;
+  height:500px;
+  width:40vw;
+  top:0;
+  left:10vw;
+  background:#eee;
+  border-radius:50px;
+  transform:skew(5deg);
+  transform-style:preserve-3d;
+}

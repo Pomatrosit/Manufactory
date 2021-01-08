@@ -23,7 +23,7 @@ const Advantages = () => {
           <div className={style.servicesMain}>
 
             <figure className={style.servicesItem}>
-               <div className={style.servicesItem__img}></div>
+               <img className={style.servicesItem__img} src="/img/adv1.svg" alt="conversion"/>
                <div className={style.servicesItem__description}>
                  <figcaption className={style.servicesItem__title}>Конверсия</figcaption>
                  <p className={style.servicesItem__text}>Создаём и используем в своих продуктах качественно продуманные
@@ -32,7 +32,7 @@ const Advantages = () => {
             </figure>
 
             <figure className={style.servicesItem}>
-               <div className={style.servicesItem__img}></div>
+               <img className={style.servicesItem__img} src="/img/adv2.svg" alt="conversion"/>
                <div className={style.servicesItem__description}>
                  <figcaption className={style.servicesItem__title}>Дизайн</figcaption>
                  <p className={style.servicesItem__text}>Используем предметное фото, 3-D моделирование и анимацию
@@ -41,16 +41,16 @@ const Advantages = () => {
             </figure>
 
             <figure className={style.servicesItem}>
-               <div className={style.servicesItem__img}></div>
+               <img className={style.servicesItem__img} src="/img/adv3.svg" alt="conversion"/>
                <div className={style.servicesItem__description}>
                  <figcaption className={style.servicesItem__title}>Инструменты</figcaption>
-                 <p className={style.servicesItem__text}>Разрабатываем сайты на связке React + Next.js, что позволяет добиться высокой скорости работы
+                 <p className={style.servicesItem__text}>Разрабатываем сайты на связке React.js + Next.js, что позволяет добиться высокой скорости работы
                     и гибкой масштабируемости проекта</p>
                </div>
             </figure>
 
             <figure className={style.servicesItem}>
-               <div className={style.servicesItem__img}></div>
+               <img className={style.servicesItem__img} src="/img/adv4.svg" alt="conversion"/>
                <div className={style.servicesItem__description}>
                  <figcaption className={style.servicesItem__title}>Сопровождение</figcaption>
                  <p className={style.servicesItem__text}>Остаёмся со своими клиентами на связи 24/7, оптимизируем и
