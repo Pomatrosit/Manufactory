@@ -59,6 +59,5 @@
   left:10vw;
   background:#eee;
   border-radius:50px;
-  transform:skew(5deg);
   transform-style:preserve-3d;
 }

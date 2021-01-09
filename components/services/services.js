@@ -13,17 +13,26 @@ const Services = () => {
     const windowHeight = document.documentElement.clientHeight;
     const topValue = (windowHeight - 500)/2;
 
-    window.addEventListener("scroll", () => {
-      if (fixedRef.current.getBoundingClientRect().top <= topValue){
+    window.addEventListener("scroll", e => {
+      const distanceToTop = staticBlockRef.current.getBoundingClientRect().top;
+
+      if (distanceToTop <= topValue){
         fixedRef.current.style.position="fixed";
         fixedRef.current.style.top = `${topValue}px`;
       }
-      if (staticBlockRef.current.getBoundingClientRect().top >= topValue){
+
+      if (distanceToTop >= topValue){
         fixedRef.current.style.position="absolute";
         fixedRef.current.style.top = `0`;
+      } else if (distanceToTop <= -2530){
+        fixedRef.current.style.position="absolute";
+        fixedRef.current.style.top = `2700px`;
       }
 
-      console.log(staticBlockRef.current.getBoundingClientRect().top)
+      if (distanceToTop>=-250)fixedRef.current.style.animation = "fixed-block-to-left 1s linear forwards";
+      if (distanceToTop<-250 && distanceToTop>=-1150)fixedRef.current.style.animation="fixed-block-to-right 1s linear forwards";
+      if (distanceToTop<-1150 && distanceToTop>=-2050)fixedRef.current.style.animation = "fixed-block-to-left 1s linear forwards";
+      if (distanceToTop<-2050)fixedRef.current.style.animation = "fixed-block-to-right 1s linear forwards";
     });
   }, []);
 

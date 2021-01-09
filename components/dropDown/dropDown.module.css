@@ -1,0 +1,24 @@
+.dropdown{
+  width:215px;
+  height:45px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 5px rgba(128, 125, 125, 0.19);
+  border-radius: 10px;
+  margin: 60px auto 0 auto;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  cursor:pointer;
+}
+
+.dropdown__value{
+  font-family: 'SF Pro Display';
+  font-weight: 600;
+  font-size: 13px;
+  color: #492A64;
+}
+
+.dropdown__arrow{
+
+}
