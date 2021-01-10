@@ -30,7 +30,7 @@
   margin-right:2%;
 }
 
-.portfolio__main .card:nth-child(3){
+.portfolio__main .card:nth-child(3n){
   margin-right:0;
 }
 
@@ -77,6 +77,8 @@
   align-items:center;
   justify-content:center;
   padding:24px 0;
+  transition:0.2s;
+  transition-timing-function: cubic-bezier(.24,.67,.46,1.66);
 }
 
 .card__gowatch{
@@ -86,13 +88,13 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #20C562;
-  transition:0.3s;
 }
 
 .card__arrow{
   margin-left:11px;
   margin-bottom:2px;
-  transition:0.3s;
+  transition:0.2s;
+  transition-timing-function: cubic-bezier(.24,.67,.46,1.66);
 }
 
 .card__after:after{

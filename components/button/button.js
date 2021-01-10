@@ -8,6 +8,7 @@ const Button = ({css, text, clickHandler}) => {
   const onMouseEnter = () => {
     if (document.documentElement.clientWidth > 768){
       buttonBackgroundRef.current.style.animation = "button-background-open-animation 1s linear forwards";
+      buttonCircleRef.current.style.animation = "button-circle-animation 0.25s ease-in";
     }
   }
 
@@ -19,8 +20,13 @@ const Button = ({css, text, clickHandler}) => {
   return(
     <>
     <div className="button" onClick = {clickHandler} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-       <div ref = {buttonBackgroundRef} className="button-background"></div>
-       <div ref = {buttonCircleRef} className="button-circle"></div>
+
+       <div ref = {buttonBackgroundRef} className="button-background">
+         <div className="circle-wrapper">
+           <div ref = {buttonCircleRef} className="button-circle"></div>
+         </div>
+       </div>
+
        <span>{text}</span>
     </div>
 
@@ -29,6 +35,7 @@ const Button = ({css, text, clickHandler}) => {
         width:${css.width || '250px'};
         height:${css.height || '50px'};
         margin:${css.margin || '0'};
+        font-family:${css.fontFamily || "Gilroy"};
         position:relative;
         display:flex;
         align-items:center;
@@ -57,12 +64,26 @@ const Button = ({css, text, clickHandler}) => {
         border-radius:50%;
       }
 
+      .circle-wrapper{
+        position:absolute;
+        top:0;
+        right:0;
+        left:0;
+        bottom:0;
+        border:5px soldi red;
+        overflow:hidden;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+
       .button span{
         font-size:${css.fontSize || "19px"};
+        font-weight:${css.fontWeight || "500"};
+        color:${css.color || "#fff"};
+        text-transform:${css.textTransform || "none"};
         position:relative;
         z-index:10;
-        font-weight: 500;
-        color: #FFFFFF;
       }
       `}</style>
     </>

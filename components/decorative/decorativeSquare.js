@@ -1,6 +1,7 @@
 const DecorativeSquare = ({color, top, left, right}) => {
 
-  const background = color === "purple" ? "#684289" : "#ECB960";
+  const background = color === "purple" ? "#684289" :
+                     color === "lightpurple" ? "#784A9F" : "#ECB960" ;
 
   return(
     <>

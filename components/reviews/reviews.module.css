@@ -1,0 +1,15 @@
+.reviews{
+
+}
+
+.reviews__top{
+  padding:120px 0 187px 0;
+  background: linear-gradient(178.5deg, #F4F4F4 1.28%, #FFFFFF 98.72%);
+}
+
+.reviews__track{
+  height:300px;
+  border:1px solid red;
+  margin-top:-100px;
+  
+}
