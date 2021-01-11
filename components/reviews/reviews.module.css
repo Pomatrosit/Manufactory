@@ -1,5 +1,6 @@
 .reviews{
-
+  overflow:hidden;
+  padding-top:40px;
 }
 
 .reviews__top{
@@ -8,8 +9,49 @@
 }
 
 .reviews__track{
-  height:300px;
-  border:1px solid red;
   margin-top:-100px;
-  
+  padding:0 50px;
+  display:flex;
+  width:1000%;
+  margin-bottom:90px;
+  align-items: flex-start;
+  cursor:pointer;
+}
+
+.reviewItem{
+  padding:30px 30px 40px 30px;
+  background: linear-gradient(178.5deg, #FCFCFC 1.28%, #FFFFFF 98.72%);
+  border: 1px solid rgba(176, 176, 176, 0.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  width:376px;
+  margin-right:50px;
+  font-family:'SF Pro Display';
+}
+
+.reviews__track .reviewItem:last-child{
+  margin-right:0;
+}
+
+.reviews__track .reviewItem:nth-child(2n){
+  margin-top:60px;
+}
+
+.reviewItem__text{
+  font-size: 15px;
+  color: #6D6476;
+  line-height: 125%;
+  margin:25px 0 35px 0;
+}
+
+.reviewItem__title{
+  font-size: 14px;
+  color: #6D6476;
+  line-height: 125%;
+}
+
+.reviewItem__title span{
+  font-weight: bold;
+  font-size: 14px;
+  color: #492A64;
 }

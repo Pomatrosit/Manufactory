@@ -15,10 +15,9 @@ const Advantages = () => {
         </div>
 
         <div className={style.services}>
-          <h3 className="section__subtitle">Надзаголовок</h3>
-          <h2 className="section__title">Студия веб-разработки</h2>
-          <p className="section__description">Полный цикл создания, продвижения и сопровождения
-            digital-продуктов любой сложности</p>
+          <h3 className="section__subtitle">Основные преимещуства</h3>
+          <h2 className="section__title">Разработка сайтов от А до Я</h2>
+          <p className="section__description">Взаимодействие с вашим клиентом в интернете ещё никогда не было таким простым</p>
 
           <div className={style.servicesMain}>
 

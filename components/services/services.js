@@ -43,8 +43,8 @@ const Services = () => {
       <div className="app-wrapper">
 
         <div className={style.topBlock}>
-          <h3 className="section__subtitle">Надзаголовок</h3>
-          <h2 className="section__title">Студия веб-разработки</h2>
+          <h3 className="section__subtitle">Решения</h3>
+          <h2 className="section__title">Весь спектр digital-продуктов</h2>
           <p className="section__description">Разрабатываем доступные и простые digital-решения
             понятные вашему пользователю</p>
           <DecorativeSquare color="purple" top="0px" left ="0px"/>

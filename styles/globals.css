@@ -19,6 +19,11 @@ a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -moz-user-select: none; /* Mozilla Firefox */
+  -ms-user-select: none; /* Internet Explorer (не поддерживается) */
+  -o-user-select: none; /* Opera Presto (не поддерживается) */
+  -webkit-user-select: none; /* Google Chrome, Opera Next, Safari */
+  -webkit-tap-highlight-color: transparent;
 }
 
 section{
@@ -49,6 +54,7 @@ section{
   font-weight: 800;
   font-size: 36px;
   color: #492A64;
+  text-transform:none;
 }
 
 .section__description{

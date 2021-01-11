@@ -56,7 +56,7 @@ const Portfolio = () => {
            background:"#FFFFFF;",
            boxShadow:"0px 0px 5px rgba(128, 125, 125, 0.19)",
            fontSize:"13px",
-           margin:"0 auto 190px auto",
+           margin:"0 auto 150px auto",
            color:"#492A64",
            textTransform:"uppercase",
            fontFamily:"SF Pro Display",
