@@ -28,8 +28,7 @@ const Portfolio = () => {
         <div className={style.portfolio__top}>
           <h3 className="section__subtitle">Портфолио</h3>
           <h2 className="section__title">Последние выполненные проекты</h2>
-          <p className="section__description">Работаем с абсолютно разными клиентами, от малого бизнеса
-            до государственных компании федерального уровня</p>
+          <p className="section__description">Открыты для сотрудничества с бизнесом любого масштаба</p>
           <DropDown />
           <DecorativeSquare color="lightpurple" top="0" right="0"/>
           <DecorativeSquare color="purple" top="40px" right="0"/>
