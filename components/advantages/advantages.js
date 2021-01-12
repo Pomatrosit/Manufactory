@@ -7,11 +7,11 @@ const Advantages = () => {
       <div className="app-wrapper">
 
         <div className={style.brands}>
-          <img src="/img/brand.png" alt=""/>
-          <img src="/img/brand.png" alt=""/>
-          <img src="/img/brand.png" alt=""/>
-          <img src="/img/brand.png" alt=""/>
-          <img src="/img/brand.png" alt=""/>
+          <img src="/img/react.png" alt=""/>
+          <img src="/img/blender.png" alt=""/>
+          <img src="/img/next.png" alt=""/>
+          <img src="/img/figma.png" alt=""/>
+          <img src="/img/october.png" alt=""/>
         </div>
 
         <div className={style.services}>

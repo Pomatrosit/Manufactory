@@ -11,7 +11,7 @@ const Header = ({openModal}) => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (imageRef.current) imageRef.current.style.transform =  `translateY(${100 - window.pageYOffset/20}px)`;
+      if (imageRef.current) imageRef.current.style.transform =  `translateY(${150 - window.pageYOffset/20}px)`;
     });
   }, []);
 
@@ -53,7 +53,8 @@ const Header = ({openModal}) => {
          </div>
 
          <div className={style.headerImg} ref= {imageRef}>
-           <span style={{fontSize:30}}>SOME AWESOME IMAGE</span>
+           <img className={style.header__desktop} src="/img/header-desktop.svg" alt="manufactory-desktop"/>
+           <img className={style.header__mobile} src="/img/header-mobile.svg" alt="manufactory-mobile"/>
          </div>
 
        </div>

@@ -5,14 +5,16 @@ import {useRef, useEffect} from "react";
 
 const Reviews = () => {
 
-  console.log("Hello from REVIEWS!!")
-
   const trackRef = useRef();
   const wrapperRef = useRef();
   const pacmanRef = useRef();
   const pacmanWrapRef = useRef();
   const packmanAfterRef = useRef();
   const packmanBeforeRef = useRef();
+  const point1 = useRef();const point2 = useRef();const point3 = useRef();
+  const point4 = useRef();const point5 = useRef();const point6 = useRef();
+  const point7 = useRef();const point8 = useRef();const point9 = useRef();
+  const point10 = useRef();const point11 = useRef();const point12 = useRef();
 
   let startPos;let trackTransform; let maxTrackTransform;
   let startPacmanPos;let pacmanTransform; let maxPacmanTransform;
@@ -191,21 +193,22 @@ const Reviews = () => {
             </div>
           </div>
 
-          <div className={style.pacman__square}></div>
-          <div className={style.pacman__square}></div>
-          <div className={style.pacman__square}></div>
-          <div className={style.pacman__square}></div>
-          <div className={style.pacman__square}></div>
-          <div className={style.pacman__square}></div>
-          <div className={style.pacman__square}></div>
-          <div className={style.pacman__square}></div>
-          <div className={style.pacman__square}></div>
-          <div className={style.pacman__square}></div>
-          <div className={style.pacman__square}></div>
-          <div className={style.pacman__square}></div>
+          <div className={style.pacman__square} ref={point1}></div>
+          <div className={style.pacman__square} ref={point2}></div>
+          <div className={style.pacman__square} ref={point3}></div>
+          <div className={style.pacman__square} ref={point4}></div>
+          <div className={style.pacman__square} ref={point5}></div>
+          <div className={style.pacman__square} ref={point6}></div>
+          <div className={style.pacman__square} ref={point7}></div>
+          <div className={style.pacman__square} ref={point8}></div>
+          <div className={style.pacman__square} ref={point9}></div>
+          <div className={style.pacman__square} ref={point10}></div>
+          <div className={style.pacman__square} ref={point11}></div>
+          <div className={style.pacman__square} ref={point12}></div>
         </div>
 
       </div>
+      <img className={style.bgImage} src="/img/girl.png" alt="girl"/>
     </section>
   )
 }

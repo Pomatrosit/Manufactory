@@ -8,13 +8,15 @@ const Services = () => {
 
   const fixedRef = useRef();
   const staticBlockRef = useRef();
+  const lastStepRef = useRef();
 
-  useEffect(() => {
+  const onResize = () => {
     const windowHeight = document.documentElement.clientHeight;
-    const topValue = (windowHeight - 500)/2;
+    const topValue = (windowHeight - heightOfFixed)/2;
 
     window.addEventListener("scroll", e => {
       const distanceToTop = staticBlockRef.current.getBoundingClientRect().top;
+      const distanceToLastStep = lastStepRef.current.getBoundingClientRect().top;
 
       if (distanceToTop <= topValue){
         fixedRef.current.style.position="fixed";
@@ -24,9 +26,14 @@ const Services = () => {
       if (distanceToTop >= topValue){
         fixedRef.current.style.position="absolute";
         fixedRef.current.style.top = `0`;
-      } else if (distanceToTop <= -2530){
+      }
+      else if (distanceToTop <= -2530){
         fixedRef.current.style.position="absolute";
-        fixedRef.current.style.top = `2700px`;
+        fixedRef.current.style.top = `${2530 + topValue}px`;
+      }
+      else if (distanceToTop <= -2530){
+        fixedRef.current.style.position="absolute";
+        fixedRef.current.style.top = `${2530 + topValue}px`;
       }
 
       if (distanceToTop>=-250)fixedRef.current.style.animation = "fixed-block-to-left 1s linear forwards";
@@ -34,6 +41,11 @@ const Services = () => {
       if (distanceToTop<-1150 && distanceToTop>=-2050)fixedRef.current.style.animation = "fixed-block-to-left 1s linear forwards";
       if (distanceToTop<-2050)fixedRef.current.style.animation = "fixed-block-to-right 1s linear forwards";
     });
+  }
+
+  useEffect(() => {
+    onResize();
+    window.addEventListener("resize", onResize);
   }, []);
 
 
@@ -58,9 +70,12 @@ const Services = () => {
 
     <section className={style.servicesMain} ref = {staticBlockRef}>
 
-      <div className={style.services__fixed} ref={fixedRef}></div>
+      <div className={style.services__fixed} ref={fixedRef}>
+        <img className = {style.service__mainImg} src="/img/service-main.svg" alt=""/>
+        <img className = {style.service__secondaryImg} src="/img/service-secondary1.svg" alt=""/>
+      </div>
 
-      <div className="app-wrapper">
+      <div className="app-wrapper" style={{zIndex:5}}>
       <div className={style.mainBlock}>
         <div className={style.mainBlock__static}>
 
@@ -85,7 +100,7 @@ const Services = () => {
                в покупателя или клиента компании благодаря строго структурированной подаче информации и побуждения к действию</p>
           </figure>
 
-          <figure className={style.mainBlock__step}>
+          <figure className={style.mainBlock__step} ref={lastStepRef}>
             <p className={style.mainBlock__subtitle}>4. Решение</p>
             <figcaption className={style.mainBlock__title}>Веб-приложения </figcaption>
             <p className={style.mainBlock__text}>Небольшие сайты главной задачей которых является конвертации посетителя в покупателя или клиента
