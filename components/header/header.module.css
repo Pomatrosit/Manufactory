@@ -84,4 +84,5 @@
   left:70%;
   height:100%;
   transform:rotateY(-10deg) rotateX(-4deg) skew(-3deg);
+  transition:0.3s;
 }

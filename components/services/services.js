@@ -17,6 +17,7 @@ const Services = () => {
     window.addEventListener("scroll", e => {
       const distanceToTop = staticBlockRef.current.getBoundingClientRect().top;
       const distanceToLastStep = lastStepRef.current.getBoundingClientRect().top;
+      console.log(lastStepRef.current.offsetTop)
 
       if (distanceToTop <= topValue){
         fixedRef.current.style.position="fixed";
@@ -27,13 +28,10 @@ const Services = () => {
         fixedRef.current.style.position="absolute";
         fixedRef.current.style.top = `0`;
       }
-      else if (distanceToTop <= -2530){
+
+      if (distanceToLastStep <= topValue){
         fixedRef.current.style.position="absolute";
-        fixedRef.current.style.top = `${2530 + topValue}px`;
-      }
-      else if (distanceToTop <= -2530){
-        fixedRef.current.style.position="absolute";
-        fixedRef.current.style.top = `${2530 + topValue}px`;
+        fixedRef.current.style.top = `${lastStepRef.current.offsetTop}px`;
       }
 
       if (distanceToTop>=-250)fixedRef.current.style.animation = "fixed-block-to-left 1s linear forwards";

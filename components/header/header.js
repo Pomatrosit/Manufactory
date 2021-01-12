@@ -8,10 +8,13 @@ const Header = ({openModal}) => {
 
   const { t } = useTranslation("home");
   const imageRef = useRef();
+  const imageMobileRef = useRef();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (imageRef.current) imageRef.current.style.transform =  `translateY(${150 - window.pageYOffset/20}px)`;
+      if (imageMobileRef.current) imageMobileRef.current.style.transform =
+      `translateY(${-window.pageYOffset/15}px) rotateY(-10deg) rotateX(-4deg) skew(-3deg)`;
     });
   }, []);
 
@@ -54,7 +57,7 @@ const Header = ({openModal}) => {
 
          <div className={style.headerImg} ref= {imageRef}>
            <img className={style.header__desktop} src="/img/header-desktop.svg" alt="manufactory-desktop"/>
-           <img className={style.header__mobile} src="/img/header-mobile.svg" alt="manufactory-mobile"/>
+           <img className={style.header__mobile} ref={imageMobileRef}src="/img/header-mobile.svg" alt="manufactory-mobile"/>
          </div>
 
        </div>
