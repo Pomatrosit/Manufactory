@@ -1,13 +1,14 @@
 import NavLink from "./navLink";
 import LanguageSwitcher from "./languageSwitcher";
 import style from "./nav.module.css";
+import Logo from "../logo"
 
 const Nav = () => {
   return(
     <nav className={style.nav}>
 
       <div className={style.logo}>
-        <img src="/img/logo.svg" alt="manufactory-logo" className={style.logoFirstImg}/>
+        <Logo width="40" height="40" fill="#fff" margin="0 27px 0 0"/>
         <img src="/img/manufactory.svg" alt="manufactory-logo"/>
       </div>
 

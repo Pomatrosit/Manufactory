@@ -1,4 +1,4 @@
-const DecorativeSquare = ({color, top, left, right}) => {
+const DecorativeSquare = ({color, top, left, right, bottom, side}) => {
 
   const background = color === "purple" ? "#684289" :
                      color === "lightpurple" ? "#784A9F" : "#ECB960" ;
@@ -14,9 +14,10 @@ const DecorativeSquare = ({color, top, left, right}) => {
           top:${top || "none"};
           right:${right || "none"};
           left:${left || "none"};
+          bottom:${bottom || "none"};
           position:absolute;
-          width:40px;
-          height:40px;
+          width:${side || "40px"};
+          height:${side || "40px"};
         }
         `}</style>
     </>

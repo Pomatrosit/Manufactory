@@ -1,7 +1,7 @@
 import style from "./dropDown.module.css";
 import {useState, useRef} from "react";
 
-const DropDown = () => {
+const DropDown = ({setActiveCategory, setCountOfCards}) => {
 
   const options = [
     {id:0, value:"Все проекты"},
@@ -42,6 +42,8 @@ const DropDown = () => {
                 onClick = {() =>  {
                   setCurrentValue(o.value);
                   afterRef.current.style.animation = "button-background-close-animation 1s linear forwards";
+                  setActiveCategory(o.id);
+                  setCountOfCards(6);
                 }}
                 key = {o.id}
                 id = {o.id}

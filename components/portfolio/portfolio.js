@@ -3,23 +3,20 @@ import DropDown from "../dropDown/dropDown";
 import PortfolioCard from "./portfolioCard";
 import DecorativeSquare from "../decorative/decorativeSquare";
 import Button from "../button/button";
+import {connect} from "react-redux";
+import {setActiveCategory} from "../../store/actions/worksAction";
+import {useState} from "react";
 
-const Portfolio = () => {
+const Portfolio = ({works, setActiveCategory}) => {
 
-  const cards = [
-    {id:1, img:"/img/traktor.png", title:"Трактор",
-    text:"Разработка Landing Page для компании арендатора тяжёлой строительной техники"},
-    {id:2, img:"/img/mosfilter.png", title:"Мос - Фильтр",
-    text:"Интернет-магазин бытовых фильтров для воды и их комплектующих"},
-    {id:3, img:"/img/dsk.png", title:"DSK - ONE",
-    text:"Разработка дизайна для сайта строительной компании"},
-    {id:4, img:"/img/barber.png", title:"Barber Bear",
-    text:"Одностраничный сайт с ситемой онлайн записи для сети мужских парикмахерских"},
-    {id:5, img:"/img/medicalcity.png", title:"Medical City",
-    text:"Дизайн сайта для крупнейшего медицинского кластера в Сибири"},
-    {id:6, img:"/img/bloodrite.png", title:"Blood Rite",
-    text:"Разработка Landing Page для тату-салона"}
-  ]
+  const [countOfCards, setCountOfCards] = useState(6);
+
+  const {activeCategory} = works;
+  const allWorks = works.works;
+
+  let cards = allWorks.filter(work => work.type === activeCategory);
+  if (activeCategory === 0) cards = allWorks;
+  const displayedCards = cards.slice(0, countOfCards);
 
   return(
     <div className={style.portfolio}>
@@ -29,7 +26,7 @@ const Portfolio = () => {
           <h3 className="section__subtitle">Портфолио</h3>
           <h2 className="section__title">Последние выполненные проекты</h2>
           <p className="section__description">Открыты для сотрудничества с бизнесом любого масштаба</p>
-          <DropDown />
+          <DropDown setActiveCategory={setActiveCategory} setCountOfCards={setCountOfCards}/>
           <DecorativeSquare color="lightpurple" top="0" right="0"/>
           <DecorativeSquare color="purple" top="40px" right="0"/>
           <DecorativeSquare color="yellow" top="0" right="40px"/>
@@ -38,7 +35,7 @@ const Portfolio = () => {
 
         <div className={style.portfolio__main}>
             {
-              cards.map(card =>
+              displayedCards.map(card =>
                 <PortfolioCard
                    key={card.id}
                    img={card.img}
@@ -48,25 +45,38 @@ const Portfolio = () => {
             }
         </div>
 
-        <Button
-          css={{
-           width:"130px",
-           height:"45px",
-           background:"#FFFFFF;",
-           boxShadow:"0px 0px 5px rgba(128, 125, 125, 0.19)",
-           fontSize:"13px",
-           margin:"0 auto 150px auto",
-           color:"#492A64",
-           textTransform:"uppercase",
-           fontFamily:"SF Pro Display",
-           fontWeight:"600"
-         }}
-         text="Ещё"/>
-
+        {
+          cards.length > countOfCards  &&
+          <Button
+            clickHandler={() => setCountOfCards(prev => prev + 6)}
+            css={{
+             width:"130px",
+             height:"45px",
+             background:"#FFFFFF;",
+             boxShadow:"0px 0px 5px rgba(128, 125, 125, 0.19)",
+             fontSize:"13px",
+             margin:"0 auto 0 auto",
+             color:"#492A64",
+             textTransform:"uppercase",
+             fontFamily:"SF Pro Display",
+             fontWeight:"600"
+           }}
+           text="Ещё"/>
+        }
 
       </div>
     </div>
   )
 }
 
-export default Portfolio;
+const mapStateToProps = state => {
+  return{
+    works:state.works
+  }
+}
+
+const mapDispatchToProps = {
+  setActiveCategory
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Portfolio);

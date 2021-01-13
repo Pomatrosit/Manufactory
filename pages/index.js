@@ -5,6 +5,7 @@ import Advantages from "../components/advantages/advantages";
 import Services from "../components/services/services";
 import Portfolio from "../components/portfolio/portfolio";
 import Reviews from "../components/reviews/reviews";
+import Question from "../components/question/question";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
          <Services />
          <Portfolio />
          <Reviews />
+         <Question />
       </DefaultLayout>
     </>
   )
