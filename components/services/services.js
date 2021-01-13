@@ -17,7 +17,6 @@ const Services = () => {
     window.addEventListener("scroll", e => {
       const distanceToTop = staticBlockRef.current.getBoundingClientRect().top;
       const distanceToLastStep = lastStepRef.current.getBoundingClientRect().top;
-      console.log(lastStepRef.current.offsetTop)
 
       if (distanceToTop <= topValue){
         fixedRef.current.style.position="fixed";

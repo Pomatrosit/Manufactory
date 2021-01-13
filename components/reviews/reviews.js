@@ -15,6 +15,7 @@ const Reviews = () => {
   const point4 = useRef();const point5 = useRef();const point6 = useRef();
   const point7 = useRef();const point8 = useRef();const point9 = useRef();
   const point10 = useRef();const point11 = useRef();const point12 = useRef();
+  const pointsArray = [point1, point2, point3,point4, point5, point6,point7, point8, point9,point10, point11, point12];
 
   let startPos;let trackTransform; let maxTrackTransform;
   let startPacmanPos;let pacmanTransform; let maxPacmanTransform;
@@ -33,6 +34,13 @@ const Reviews = () => {
     onResize();
     window.addEventListener("resize", onResize)
   }, []);
+
+  const eating = translate => {
+    pointsArray.forEach(point => {
+      if (point.current.offsetLeft <= translate + 20) point.current.style.opacity = "0";
+      else point.current.style.opacity = "1";
+    });
+  }
 
   const setPacmanActive = () => {
     pacmanWrapRef.current.style.animation = "pacman-active 1s ease forwards";
@@ -64,6 +72,7 @@ const Reviews = () => {
       trackRef.current.style.transform = `translateX(${delta}px)`;
       const percentDelta = delta/maxTrackTransform;
       pacmanRef.current.style.transform = `translateX(${percentDelta*maxPacmanTransform}px)`;
+      eating(percentDelta*maxPacmanTransform);
     }
   }
 
@@ -73,6 +82,7 @@ const Reviews = () => {
       trackRef.current.style.transform = `translateX(${delta}px)`;
       const percentDelta = delta/maxTrackTransform;
       pacmanRef.current.style.transform = `translateX(${percentDelta*maxPacmanTransform}px)`;
+      eating(percentDelta*maxPacmanTransform);
     }
   }
 
@@ -106,6 +116,7 @@ const Reviews = () => {
       pacmanRef.current.style.transform = `translateX(${delta}px)`;
       const percentDelta = delta/maxPacmanTransform;
       trackRef.current.style.transform = `translateX(${percentDelta*maxTrackTransform}px)`;
+      eating(delta);
     }
   }
 
@@ -115,6 +126,7 @@ const Reviews = () => {
       pacmanRef.current.style.transform = `translateX(${delta}px)`;
       const percentDelta = delta/maxPacmanTransform;
       trackRef.current.style.transform = `translateX(${percentDelta*maxTrackTransform}px)`;
+      eating(delta);
     }
   }
 
