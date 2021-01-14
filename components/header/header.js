@@ -27,7 +27,7 @@ const Header = ({openModal}) => {
 
        <div className="app-wrapper">
 
-         <Nav />
+         <Nav without={1}/>
 
          <div className={style.headerMain}>
            <h1 className={style.title}>{t("title")}</h1>

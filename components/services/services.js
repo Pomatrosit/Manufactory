@@ -10,6 +10,10 @@ const Services = () => {
   const staticBlockRef = useRef();
   const lastStepRef = useRef();
   const secondarySvgRef = useRef();
+  const triangle1 = useRef();
+  const triangle2 = useRef();
+  const triangle3 = useRef();
+  const triangle4 = useRef();
 
   const onResize = () => {
     const windowHeight = document.documentElement.clientHeight;
@@ -50,6 +54,13 @@ const Services = () => {
         fixedRef.current.style.animation = "fixed-block-to-right 1s linear forwards";
         secondarySvgRef.current.src = "/img/service-secondary1.svg";
       }
+
+      const triangleTranslate = distanceToTop/20;
+
+      triangle1.current.style.transform = `translateY(${triangleTranslate}px)`;
+      triangle2.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
+      triangle3.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
+      triangle4.current.style.transform = `translateY(${triangleTranslate}px) rotate(180deg)`;
     });
   }
 
@@ -80,9 +91,16 @@ const Services = () => {
 
     <section className={style.servicesMain} ref = {staticBlockRef}>
 
+      <img ref={triangle1} className ={`${style.triangle} ${style.triangle1}`}src="/img/triangle.png" alt=""/>
+      <img ref={triangle2} className ={`${style.triangle} ${style.triangle2}`}src="/img/triangle.png" alt=""/>
+      <img ref={triangle3}className ={`${style.triangle} ${style.triangle3}`}src="/img/triangle.png" alt=""/>
+      <img ref={triangle4} className ={`${style.triangle} ${style.triangle4}`}src="/img/triangle.png" alt=""/>
+
       <div className={style.services__fixed} ref={fixedRef}>
         <img className = {style.service__mainImg} src="/img/service-main.svg" alt=""/>
-        <img className = {style.service__secondaryImg} src="/img/service-secondary1.svg" ref={secondarySvgRef} alt=""/>
+        <div className={style.service__secondaryImg}>
+          <img src="/img/service-secondary1.svg" ref={secondarySvgRef} alt=""/>
+        </div>
       </div>
 
       <div className="app-wrapper" style={{zIndex:5}}>

@@ -1,7 +1,7 @@
 import style from "./nav.module.css";
 import {useRef} from "react";
 
-const NavLink = ({text}) => {
+const NavLink = ({title}) => {
 
   const shapeRef = useRef();
 
@@ -15,7 +15,7 @@ const NavLink = ({text}) => {
 
   return(
       <li className={style.link} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-         {text}
+         {title}
          <div className={style.linkShape} ref = {shapeRef}></div>
       </li>
   )

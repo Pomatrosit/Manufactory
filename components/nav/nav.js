@@ -3,7 +3,19 @@ import LanguageSwitcher from "./languageSwitcher";
 import style from "./nav.module.css";
 import Logo from "../logo"
 
-const Nav = () => {
+const Nav = ({without}) => {
+
+  let links = [
+    {id:1, title:"Главная", href:"/"},
+    {id:2, title:"Портфолио", href:"/potfolio"},
+    {id:3, title:"Цены", href:"/prices"},
+    {id:4, title:"Контакты", href:"/contacts"},
+    {id:5, title:"Статьи", href:"/blog"},
+    {id:6, title:"Компания", href:"/about"}
+  ]
+
+  links = links.filter(link => link.id !== without);
+
   return(
     <nav className={style.nav}>
 
@@ -13,11 +25,14 @@ const Nav = () => {
       </div>
 
       <ul className={style.links}>
-        <NavLink text="Портфолио"/>
-        <NavLink text="Цены"/>
-        <NavLink text="Контакты"/>
-        <NavLink text="Статьи"/>
-        <NavLink text="Компания"/>
+        {
+          links.map(link =>
+            <NavLink
+              key={link.id}
+              title={link.title}
+              href={link.href}/>
+            )
+        }
       </ul>
 
       <LanguageSwitcher />
