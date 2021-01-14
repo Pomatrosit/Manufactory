@@ -9,11 +9,21 @@ const Services = () => {
   const fixedRef = useRef();
   const staticBlockRef = useRef();
   const lastStepRef = useRef();
-  const secondarySvgRef = useRef();
   const triangle1 = useRef();
   const triangle2 = useRef();
   const triangle3 = useRef();
   const triangle4 = useRef();
+  const secondarySvg1Ref = useRef();
+  const secondarySvg2Ref = useRef();
+  const secondarySvg3Ref = useRef();
+  const secondarySvg4Ref = useRef();
+  const secondarySvgs = [secondarySvg1Ref, secondarySvg2Ref, secondarySvg3Ref, secondarySvg4Ref];
+
+  const hideSecondarySvgs = () => {
+    secondarySvgs.forEach(svg => {
+      svg.current.style.opacity="0";
+    })
+  }
 
   const onResize = () => {
     const windowHeight = document.documentElement.clientHeight;
@@ -40,19 +50,23 @@ const Services = () => {
 
       if (distanceToTop>=-250){
         fixedRef.current.style.animation = "fixed-block-to-left 1s linear forwards";
-        secondarySvgRef.current.src = "/img/service-secondary1.svg";
+        hideSecondarySvgs();
+        secondarySvg1Ref.current.style.opacity="1";
       }
       if (distanceToTop<-250 && distanceToTop>=-1150){
         fixedRef.current.style.animation="fixed-block-to-right 1s linear forwards";
-        secondarySvgRef.current.src = "/img/service-secondary2.svg";
+        hideSecondarySvgs();
+        secondarySvg2Ref.current.style.opacity="1";
       }
       if (distanceToTop<-1150 && distanceToTop>=-2050){
         fixedRef.current.style.animation = "fixed-block-to-left 1s linear forwards";
-        secondarySvgRef.current.src = "/img/service-secondary3.svg"
+        hideSecondarySvgs();
+        secondarySvg3Ref.current.style.opacity="1";
       }
       if (distanceToTop<-2050){
         fixedRef.current.style.animation = "fixed-block-to-right 1s linear forwards";
-        secondarySvgRef.current.src = "/img/service-secondary1.svg";
+        hideSecondarySvgs();
+        secondarySvg4Ref.current.style.opacity="1";
       }
 
       const triangleTranslate = distanceToTop/20;
@@ -98,9 +112,10 @@ const Services = () => {
 
       <div className={style.services__fixed} ref={fixedRef}>
         <img className = {style.service__mainImg} src="/img/service-main.svg" alt=""/>
-        <div className={style.service__secondaryImg}>
-          <img src="/img/service-secondary1.svg" ref={secondarySvgRef} alt=""/>
-        </div>
+        <img src="/img/service-secondary1.svg" ref={secondarySvg1Ref} alt="" className={style.service__secondaryImg}/>
+        <img src="/img/service-secondary2.svg" ref={secondarySvg2Ref} alt="" className={style.service__secondaryImg}/>
+        <img src="/img/service-secondary3.svg" ref={secondarySvg3Ref} alt="" className={style.service__secondaryImg}/>
+        <img src="/img/service-secondary1.svg" ref={secondarySvg4Ref} alt="" className={style.service__secondaryImg}/>
       </div>
 
       <div className="app-wrapper" style={{zIndex:5}}>
