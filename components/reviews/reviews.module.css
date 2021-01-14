@@ -81,9 +81,10 @@
 .pacman__square{
   width:20px;
   height:20px;
-  background: #eee;
+  background: #ECB960;
   position:relative;
   z-index:1;
+  border-radius:5px;
 }
 
 .pacman{

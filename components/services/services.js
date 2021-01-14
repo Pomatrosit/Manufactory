@@ -9,6 +9,7 @@ const Services = () => {
   const fixedRef = useRef();
   const staticBlockRef = useRef();
   const lastStepRef = useRef();
+  const secondarySvgRef = useRef();
 
   const onResize = () => {
     const windowHeight = document.documentElement.clientHeight;
@@ -33,10 +34,22 @@ const Services = () => {
         fixedRef.current.style.top = `${lastStepRef.current.offsetTop}px`;
       }
 
-      if (distanceToTop>=-250)fixedRef.current.style.animation = "fixed-block-to-left 1s linear forwards";
-      if (distanceToTop<-250 && distanceToTop>=-1150)fixedRef.current.style.animation="fixed-block-to-right 1s linear forwards";
-      if (distanceToTop<-1150 && distanceToTop>=-2050)fixedRef.current.style.animation = "fixed-block-to-left 1s linear forwards";
-      if (distanceToTop<-2050)fixedRef.current.style.animation = "fixed-block-to-right 1s linear forwards";
+      if (distanceToTop>=-250){
+        fixedRef.current.style.animation = "fixed-block-to-left 1s linear forwards";
+        secondarySvgRef.current.src = "/img/service-secondary1.svg";
+      }
+      if (distanceToTop<-250 && distanceToTop>=-1150){
+        fixedRef.current.style.animation="fixed-block-to-right 1s linear forwards";
+        secondarySvgRef.current.src = "/img/service-secondary2.svg";
+      }
+      if (distanceToTop<-1150 && distanceToTop>=-2050){
+        fixedRef.current.style.animation = "fixed-block-to-left 1s linear forwards";
+        secondarySvgRef.current.src = "/img/service-secondary3.svg"
+      }
+      if (distanceToTop<-2050){
+        fixedRef.current.style.animation = "fixed-block-to-right 1s linear forwards";
+        secondarySvgRef.current.src = "/img/service-secondary1.svg";
+      }
     });
   }
 
@@ -69,7 +82,7 @@ const Services = () => {
 
       <div className={style.services__fixed} ref={fixedRef}>
         <img className = {style.service__mainImg} src="/img/service-main.svg" alt=""/>
-        <img className = {style.service__secondaryImg} src="/img/service-secondary1.svg" alt=""/>
+        <img className = {style.service__secondaryImg} src="/img/service-secondary1.svg" ref={secondarySvgRef} alt=""/>
       </div>
 
       <div className="app-wrapper" style={{zIndex:5}}>
