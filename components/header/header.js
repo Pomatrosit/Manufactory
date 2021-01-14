@@ -3,8 +3,10 @@ import Button from "../button/button";
 import style from "./header.module.css";
 import {useEffect, useRef} from "react";
 import useTranslation from 'next-translate/useTranslation';
+import {connect} from "react-redux";
+import {setModalOpen} from "../../store/actions/modalAction";
 
-const Header = ({openModal}) => {
+const Header = ({setModalOpen}) => {
 
   const { t } = useTranslation("home");
   const imageRef = useRef();
@@ -34,6 +36,7 @@ const Header = ({openModal}) => {
            <h2 className={style.subtitle}>Полный цикл создания и сопровождения сайтов любой сложности</h2>
            <div className={style.btnGroup}>
              <Button
+               clickHandler = {() => setModalOpen(true)}
                css={{
                  width:"250px",
                  height:"50px",
@@ -65,4 +68,8 @@ const Header = ({openModal}) => {
   )
 }
 
-export default Header;
+const mapDispatchToProps = {
+  setModalOpen
+}
+
+export default connect(null, mapDispatchToProps)(Header);

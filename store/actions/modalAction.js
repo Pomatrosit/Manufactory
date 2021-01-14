@@ -1,13 +1,8 @@
 import * as types from "../types";
 
-export const openModal = () => {
+export const setModalOpen = bool => {
   return{
-    type:types.OPEN_MODAL
-  }
-}
-
-export const closeModal = () => {
-  return{
-    type:types.CLOSE_MODAL
+    type:types.SET_MODAL_OPEN,
+    payload:bool
   }
 }

@@ -8,12 +8,8 @@ const initialState={
 export const modalReducer = (state = initialState, action) => {
   switch(action.type){
 
-    case types.OPEN_MODAL : {
-      return {...state, isModalOpen:true}
-    }
-
-    case types.CLOSE_MODAL : {
-      return {...state, isModalOpen:false}
+    case types.SET_MODAL_OPEN : {
+      return {...state, isModalOpen:action.payload}
     }
 
     default:return state

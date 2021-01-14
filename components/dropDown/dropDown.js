@@ -15,7 +15,6 @@ const DropDown = ({setActiveCategory, setCountOfCards}) => {
   const [isDropDownOpen, setDropDownOpen] = useState(false);
   const [currentValue, setCurrentValue] = useState(options[0].value);
 
-
   const onMouseEnter = () => {
     if (document.documentElement.clientWidth > 768){
       if (!isDropDownOpen) afterRef.current.style.animation = "button-background-open-animation 1s linear forwards";
@@ -37,6 +36,9 @@ const DropDown = ({setActiveCategory, setCountOfCards}) => {
 
       { isDropDownOpen &&
         <div className={style.options}>
+          <div className={style.options__after}></div>
+
+          <div className={style.options__content}>
           {
             options.map(o =>
               <div
@@ -51,6 +53,8 @@ const DropDown = ({setActiveCategory, setCountOfCards}) => {
                 className={style.option}>{o.value}
               </div>)
           }
+          </div>
+          
         </div>
       }
 
