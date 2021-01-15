@@ -4,6 +4,8 @@ import { useRef, useEffect } from "react";
 
 const Services = () => {
 
+  console.log("Hello from SERVICES!!!")
+
   const fixedRef = useRef();
   const staticBlockRef = useRef();
   const lastStepRef = useRef();
@@ -43,8 +45,6 @@ const Services = () => {
       const distanceToTop = staticBlockRef.current.getBoundingClientRect().top;
       const distanceToLastStep = lastStepRef.current.getBoundingClientRect().top;
       const distanceToTop2 = topValue - distanceToTop;
-
-      console.log(distanceToTop2, position)
 
       if (distanceToTop <= topValue){
         fixedRef.current.style.transition = "0s";

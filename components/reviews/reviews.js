@@ -21,7 +21,7 @@ const Reviews = () => {
   let startPacmanPos;let pacmanTransform; let maxPacmanTransform;
   let pacmanIsActive=false;
 
-  const onResize = () => {
+  const startCalculations = () => {
     const length = trackRef.current.children.length;
     trackRef.current.style.width = `${376*length + (length - 1)*50}px`;
     trackRef.current.style.transform="translateX(0px)";
@@ -31,8 +31,8 @@ const Reviews = () => {
   }
 
   useEffect(() => {
-    onResize();
-    window.addEventListener("resize", onResize)
+    startCalculations();
+    window.addEventListener("resize", startCalculations);
   }, []);
 
   const eating = translate => {
