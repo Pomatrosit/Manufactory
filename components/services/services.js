@@ -24,44 +24,27 @@ const Services = () => {
   }
 
   const heightOfFixed = 500;
-
   const ANIMATE_TO_LEFT = "1s linear 0s 1 normal forwards running fixed-block-to-left";
   const ANIMATE_TO_RIGHT = "1s linear 0s 1 normal forwards running fixed-block-to-right";
+  let windowHeight;let topValue;let position;let prevPosition;
 
-  const onResize = () => {
-    const windowHeight = document.documentElement.clientHeight;
-    const topValue = (windowHeight - heightOfFixed)/2;
-
-    let position = "left";
-    let prevPosition = "left";
+  const startCalculate = () => {
+    windowHeight = document.documentElement.clientHeight;
+    topValue = (windowHeight - heightOfFixed)/2;
+    position = "left";
+    prevPosition = "left";
     fixedRef.current.style.animation = ANIMATE_TO_LEFT;
+  }
 
+  useEffect(() => {
+    startCalculate();
 
     window.addEventListener("scroll", e => {
       const distanceToTop = staticBlockRef.current.getBoundingClientRect().top;
       const distanceToLastStep = lastStepRef.current.getBoundingClientRect().top;
       const distanceToTop2 = topValue - distanceToTop;
 
-      if (distanceToTop2 < 400 && position === "right"){
-        hideSecondarySvgs();
-        secondarySvg1Ref.current.style.opacity="1";
-        position="left";
-      } else
-      if (distanceToTop2 >= 400 && distanceToTop2 < 1300 && position === "left"){
-        hideSecondarySvgs();
-        secondarySvg2Ref.current.style.opacity="1";
-        position="right";
-      } else
-      if (distanceToTop2 >= 1300 && distanceToTop2 < 2200 && position === "right"){
-        hideSecondarySvgs();
-        secondarySvg3Ref.current.style.opacity="1";
-        position="left";
-      } else
-      if (distanceToTop2 >= 2200 && position === "left"){
-        hideSecondarySvgs();
-        secondarySvg4Ref.current.style.opacity="1";
-        position="right";
-      }
+      console.log(distanceToTop2, position)
 
       if (distanceToTop <= topValue){
         fixedRef.current.style.transition = "0s";
@@ -83,6 +66,27 @@ const Services = () => {
         position="right";
       }
 
+      if (distanceToTop2 < 400){
+        hideSecondarySvgs();
+        secondarySvg1Ref.current.style.opacity="1";
+        position="left";
+      } else
+      if (distanceToTop2 >= 400 && distanceToTop2 < 1300){
+        hideSecondarySvgs();
+        secondarySvg2Ref.current.style.opacity="1";
+        position="right";
+      } else
+      if (distanceToTop2 >= 1300 && distanceToTop2 < 2200){
+        hideSecondarySvgs();
+        secondarySvg3Ref.current.style.opacity="1";
+        position="left";
+      } else
+      if (distanceToTop2 >= 2200){
+        hideSecondarySvgs();
+        secondarySvg4Ref.current.style.opacity="1";
+        position="right";
+      }
+
       if (prevPosition !== position){
         if (position === "left") fixedRef.current.style.animation = ANIMATE_TO_LEFT;
         else fixedRef.current.style.animation = ANIMATE_TO_RIGHT;
@@ -96,11 +100,11 @@ const Services = () => {
 
       prevPosition = position;
     });
-  }
 
-  useEffect(() => {
-    onResize();
-    window.addEventListener("resize", onResize);
+
+    window.addEventListener("resize", () => {
+      startCalculate();
+    })
   }, []);
 
 
