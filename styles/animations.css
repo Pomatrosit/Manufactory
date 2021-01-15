@@ -313,7 +313,7 @@
 }
 
 
-@keyframes pacman-unactive { 
+@keyframes pacman-unactive {
   0% { transform: matrix3d(1.5, 0, 0, 0, 0, 1.5, 0, 0, 0, 0, 1, 0, 0, -21, 0, 1); }
   1.26% { transform: matrix3d(1.452, 0, 0, 0, 0, 1.445, 0, 0, 0, 0, 1, 0, 0, -13.578, 0, 1); }
   2.5% { transform: matrix3d(1.399, 0, 0, 0, 0, 1.375, 0, 0, 0, 0, 1, 0, 0, -8.999, 0, 1); }

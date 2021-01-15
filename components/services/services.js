@@ -4,8 +4,6 @@ import { useRef, useEffect } from "react";
 
 const Services = () => {
 
-  const heightOfFixed = 500;
-
   const fixedRef = useRef();
   const staticBlockRef = useRef();
   const lastStepRef = useRef();
@@ -25,13 +23,21 @@ const Services = () => {
     })
   }
 
+  const heightOfFixed = 500;
+
+  const ANIMATE_TO_LEFT = "1s linear 0s 1 normal forwards running fixed-block-to-left";
+  const ANIMATE_TO_RIGHT = "1s linear 0s 1 normal forwards running fixed-block-to-right";
+
   const onResize = () => {
     const windowHeight = document.documentElement.clientHeight;
     const topValue = (windowHeight - heightOfFixed)/2;
+    let position = "left";
+    fixedRef.current.style.animation = ANIMATE_TO_LEFT;
 
     window.addEventListener("scroll", e => {
       const distanceToTop = staticBlockRef.current.getBoundingClientRect().top;
       const distanceToLastStep = lastStepRef.current.getBoundingClientRect().top;
+      const distanceToTop2 = topValue - distanceToTop;
 
       if (distanceToTop <= topValue){
         fixedRef.current.style.position="fixed";
@@ -41,36 +47,40 @@ const Services = () => {
       if (distanceToTop >= topValue){
         fixedRef.current.style.position="absolute";
         fixedRef.current.style.top = `0`;
+        position = "left";
       }
 
       if (distanceToLastStep <= topValue){
         fixedRef.current.style.position="absolute";
         fixedRef.current.style.top = `${lastStepRef.current.offsetTop}px`;
+        position = "right";
       }
 
-      if (distanceToTop>=-250){
-        fixedRef.current.style.animation = "fixed-block-to-left 1s linear forwards";
+      if (distanceToTop2 < 400 && position === "right"){
         hideSecondarySvgs();
         secondarySvg1Ref.current.style.opacity="1";
-      }
-      if (distanceToTop<-250 && distanceToTop>=-1150){
-        fixedRef.current.style.animation="fixed-block-to-right 1s linear forwards";
+        position="left";
+      } else
+      if (distanceToTop2 >= 400 && distanceToTop2 < 1300 && position === "left"){
         hideSecondarySvgs();
         secondarySvg2Ref.current.style.opacity="1";
-      }
-      if (distanceToTop<-1150 && distanceToTop>=-2050){
-        fixedRef.current.style.animation = "fixed-block-to-left 1s linear forwards";
+        position="right";
+      } else
+      if (distanceToTop2 >= 1300 && distanceToTop2 < 2200 && position === "right"){
         hideSecondarySvgs();
         secondarySvg3Ref.current.style.opacity="1";
-      }
-      if (distanceToTop<-2050){
-        fixedRef.current.style.animation = "fixed-block-to-right 1s linear forwards";
+        position="left";
+      } else
+      if (distanceToTop2 >= 2200 && position === "left"){
         hideSecondarySvgs();
         secondarySvg4Ref.current.style.opacity="1";
+        position="right";
       }
 
-      const triangleTranslate = distanceToTop/20;
+      if (position === "left") fixedRef.current.style.animation = ANIMATE_TO_LEFT;
+      else fixedRef.current.style.animation = ANIMATE_TO_RIGHT;
 
+      const triangleTranslate = distanceToTop/20;
       triangle1.current.style.transform = `translateY(${triangleTranslate}px)`;
       triangle2.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
       triangle3.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
@@ -105,11 +115,6 @@ const Services = () => {
 
     <section className={style.servicesMain} ref = {staticBlockRef}>
 
-      <img ref={triangle1} className ={`${style.triangle} ${style.triangle1}`}src="/img/triangle.png" alt=""/>
-      <img ref={triangle2} className ={`${style.triangle} ${style.triangle2}`}src="/img/triangle.png" alt=""/>
-      <img ref={triangle3}className ={`${style.triangle} ${style.triangle3}`}src="/img/triangle.png" alt=""/>
-      <img ref={triangle4} className ={`${style.triangle} ${style.triangle4}`}src="/img/triangle.png" alt=""/>
-
       <div className={style.services__fixed} ref={fixedRef}>
         <img className = {style.service__mainImg} src="/img/service-main.svg" alt=""/>
         <img src="/img/service-secondary1.svg" ref={secondarySvg1Ref} alt="" className={style.service__secondaryImg}/>
@@ -119,6 +124,7 @@ const Services = () => {
       </div>
 
       <div className="app-wrapper" style={{zIndex:5}}>
+
       <div className={style.mainBlock}>
         <div className={style.mainBlock__static}>
 
@@ -153,6 +159,12 @@ const Services = () => {
         </div>
 
        </div>
+
+       <img ref={triangle1} className ={`${style.triangle} ${style.triangle1}`}src="/img/triangle.png" alt=""/>
+       <img ref={triangle2} className ={`${style.triangle} ${style.triangle2}`}src="/img/triangle.png" alt=""/>
+       <img ref={triangle3}className ={`${style.triangle} ${style.triangle3}`}src="/img/triangle.png" alt=""/>
+       <img ref={triangle4} className ={`${style.triangle} ${style.triangle4}`}src="/img/triangle.png" alt=""/>
+       
       </div>
     </section>
     </>

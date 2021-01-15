@@ -6,6 +6,7 @@
 
 .servicesMain{
   position:relative;
+  overflow:hidden;
 }
 
 .topBlock{
@@ -92,23 +93,23 @@
 
 .triangle1{
   top:100px;
-  left:13vw;
+  left:0;
 }
 
 .triangle2{
   top:1000px;
-  right:15vw;
+  right:0;
   transform:rotate(90deg);
 }
 
 .triangle3{
   top:1900px;
-  left:13vw;
+  left:0;
   transform:rotate(90deg);
 }
 
 .triangle4{
   top:2800px;
-  right:13vw;
+  right:0;
   transform:rotate(180deg);
 }
