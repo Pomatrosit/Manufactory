@@ -61,6 +61,7 @@
   border-radius:50px;
   transform-style:preserve-3d;
   z-index:10;
+  transition:1s;
 }
 
 .service__mainImg{

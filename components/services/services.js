@@ -31,30 +31,16 @@ const Services = () => {
   const onResize = () => {
     const windowHeight = document.documentElement.clientHeight;
     const topValue = (windowHeight - heightOfFixed)/2;
+
     let position = "left";
+    let prevPosition = "left";
     fixedRef.current.style.animation = ANIMATE_TO_LEFT;
+
 
     window.addEventListener("scroll", e => {
       const distanceToTop = staticBlockRef.current.getBoundingClientRect().top;
       const distanceToLastStep = lastStepRef.current.getBoundingClientRect().top;
       const distanceToTop2 = topValue - distanceToTop;
-
-      if (distanceToTop <= topValue){
-        fixedRef.current.style.position="fixed";
-        fixedRef.current.style.top = `${topValue}px`;
-      }
-
-      if (distanceToTop >= topValue){
-        fixedRef.current.style.position="absolute";
-        fixedRef.current.style.top = `0`;
-        position = "left";
-      }
-
-      if (distanceToLastStep <= topValue){
-        fixedRef.current.style.position="absolute";
-        fixedRef.current.style.top = `${lastStepRef.current.offsetTop}px`;
-        position = "right";
-      }
 
       if (distanceToTop2 < 400 && position === "right"){
         hideSecondarySvgs();
@@ -77,14 +63,38 @@ const Services = () => {
         position="right";
       }
 
-      if (position === "left") fixedRef.current.style.animation = ANIMATE_TO_LEFT;
-      else fixedRef.current.style.animation = ANIMATE_TO_RIGHT;
+      if (distanceToTop <= topValue){
+        fixedRef.current.style.transition = "0s";
+        fixedRef.current.style.position="fixed";
+        fixedRef.current.style.top = `${topValue}px`;
+      }
+
+      if (distanceToTop >= topValue){
+        fixedRef.current.style.transition = "0s";
+        fixedRef.current.style.position="absolute";
+        fixedRef.current.style.top = `0`;
+        position="left";
+      }
+
+      if (distanceToLastStep <= topValue){
+        fixedRef.current.style.transition = "0s";
+        fixedRef.current.style.position="absolute";
+        fixedRef.current.style.top = `${lastStepRef.current.offsetTop}px`;
+        position="right";
+      }
+
+      if (prevPosition !== position){
+        if (position === "left") fixedRef.current.style.animation = ANIMATE_TO_LEFT;
+        else fixedRef.current.style.animation = ANIMATE_TO_RIGHT;
+      }
 
       const triangleTranslate = distanceToTop/20;
       triangle1.current.style.transform = `translateY(${triangleTranslate}px)`;
       triangle2.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
       triangle3.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
       triangle4.current.style.transform = `translateY(${triangleTranslate}px) rotate(180deg)`;
+
+      prevPosition = position;
     });
   }
 
@@ -164,7 +174,7 @@ const Services = () => {
        <img ref={triangle2} className ={`${style.triangle} ${style.triangle2}`}src="/img/triangle.png" alt=""/>
        <img ref={triangle3}className ={`${style.triangle} ${style.triangle3}`}src="/img/triangle.png" alt=""/>
        <img ref={triangle4} className ={`${style.triangle} ${style.triangle4}`}src="/img/triangle.png" alt=""/>
-       
+
       </div>
     </section>
     </>
