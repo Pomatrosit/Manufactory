@@ -4,8 +4,6 @@ import { useRef, useEffect } from "react";
 
 const Services = () => {
 
-  console.log("Hello from SERVICES!!!")
-
   const fixedRef = useRef();
   const staticBlockRef = useRef();
   const lastStepRef = useRef();
@@ -116,8 +114,7 @@ const Services = () => {
         <div className={style.topBlock}>
           <h3 className="section__subtitle">Решения</h3>
           <h2 className="section__title">Весь спектр digital-продуктов</h2>
-          <p className="section__description">Разрабатываем доступные и простые digital-решения
-            понятные вашему пользователю</p>
+          <p className="section__description" style={{maxWidth:550}}>Разрабатываем удобные сайты и приложения понятные любому пользователю</p>
           <DecorativeSquare color="purple" top="0px" left ="0px"/>
           <DecorativeSquare color="purple" top="40px" left ="40px"/>
           <DecorativeSquare color="purple" top="-40px" left ="-40px"/>

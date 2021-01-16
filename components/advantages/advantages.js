@@ -6,14 +6,6 @@ const Advantages = () => {
     <section className = {style.advantages}>
       <div className="app-wrapper">
 
-        <div className={style.brands}>
-          <img src="/img/react.png" alt=""/>
-          <img src="/img/blender.png" alt=""/>
-          <img src="/img/next.png" alt=""/>
-          <img src="/img/figma.png" alt=""/>
-          <img src="/img/october.png" alt=""/>
-        </div>
-
         <div className={style.services}>
           <h3 className="section__subtitle">Основные преимещуства</h3>
           <h2 className="section__title">Разработка сайтов от А до Я</h2>

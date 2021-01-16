@@ -1,7 +1,9 @@
 import style from "./NextModal.module.css";
-import {useEffect} from "react";
+import {useEffect, useRef} from "react";
 
 const NextModal = ({children, css, setModalOpen}) => {
+
+  const modalRef = useRef();
 
   const getBodyScrollTop = () => {
     return self.pageYOffset || (document.documentElement && document.documentElement.ScrollTop) || (document.body && document.body.scrollTop);
@@ -31,6 +33,7 @@ const NextModal = ({children, css, setModalOpen}) => {
        <div onClick ={e => e.stopPropagation()}
              className={style.modal}
              style={{maxWidth:css.maxWidth || "100%"}}
+             ref={modalRef}
            >
 
            <div className={style.modal__content} style={{padding:css.padding || "0"}}>

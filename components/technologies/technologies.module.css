@@ -1,0 +1,16 @@
+.technologies{
+  padding:250px 0 0 0;
+}
+
+.technologies__main{
+  background: linear-gradient(178.5deg, #F4F4F4 1.28%, #FFFFFF 98.72%);
+  position:relative;
+  padding-top:120px;
+}
+
+.brands{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top:192px;
+}

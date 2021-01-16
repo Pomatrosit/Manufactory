@@ -36,7 +36,6 @@ const Header = ({setModalOpen}) => {
            <h2 className={style.subtitle}>Полный цикл создания и сопровождения сайтов любой сложности</h2>
            <div className={style.btnGroup}>
              <Button
-               clickHandler = {() => setModalOpen(true)}
                css={{
                  width:"250px",
                  height:"50px",
@@ -47,14 +46,15 @@ const Header = ({setModalOpen}) => {
                }}
                text="Смотреть работы"/>
              <Button
+               clickHandler = {() => setModalOpen(true)}
                css={{
-                width:"200px",
+                width:"250px",
                 height:"50px",
                 background:"#D4B57F",
                 boxShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)",
                 fontSize:"19px"
               }}
-              text="Что делаем"/>
+              text="Оставить заявку"/>
            </div>
          </div>
 

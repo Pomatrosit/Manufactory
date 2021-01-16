@@ -25,7 +25,7 @@ const Portfolio = ({works, setActiveCategory}) => {
         <div className={style.portfolio__top}>
           <h3 className="section__subtitle">Портфолио</h3>
           <h2 className="section__title">Последние выполненные проекты</h2>
-          <p className="section__description">Открыты для сотрудничества с бизнесом любого масштаба</p>
+          <p className="section__description" style={{maxWidth:500}}>Открыты для сотрудничества с бизнесом любого масштаба</p>
           <DropDown setActiveCategory={setActiveCategory} setCountOfCards={setCountOfCards}/>
           <DecorativeSquare color="lightpurple" top="0" right="0"/>
           <DecorativeSquare color="purple" top="40px" right="0"/>

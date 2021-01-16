@@ -2,6 +2,7 @@ import Footer from "../footer/footer";
 import {connect} from "react-redux";
 import {setModalOpen} from "../../store/actions/modalAction";
 import Modal from "../NextModal/NextModal";
+import Form from "../NextForm/NextForm";
 
 const DefaultLayout = ({children, isModalOpen, setModalOpen}) => {
 
@@ -11,13 +12,13 @@ const DefaultLayout = ({children, isModalOpen, setModalOpen}) => {
       <Footer />
 
       { isModalOpen &&
-        <Modal css={{padding:"20px", maxWidth:"400px"}}
+        <Modal css={{padding:"0px", maxWidth:"360px"}}
                setModalOpen={setModalOpen}
                >
 
-         <div style={{fontSize:20}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sint fugiat reiciendis,
-         necessitatibus cumque, assumenda laudantium inventore modi, a voluptatem, aspernatur est.
-         Reprehenderit aut, nam suscipit ratione totam recusandae inventore!</div>
+          <Form title="Оставьте заявку на обратный звонок"
+                css={{padding:"40px", maxWidth:"100%"}}
+          />
 
       </Modal>
       }
