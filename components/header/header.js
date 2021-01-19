@@ -23,10 +23,6 @@ const Header = ({setModalOpen}) => {
   return(
      <section className={style.header}>
 
-       <img src="/img/bg.png" alt="background" className={style.bg1}/>
-
-       <div className={style.bg2}><div className={style.bg2Inner}></div></div>
-
        <div className="app-wrapper">
 
          <Nav without={1}/>
@@ -57,6 +53,9 @@ const Header = ({setModalOpen}) => {
               text="Оставить заявку"/>
            </div>
          </div>
+
+         <img src="/img/points1.svg" className={`${style.points1} ${style.points}`}></img>
+         <img src="/img/points2.svg" className={`${style.points2} ${style.points}`}></img>
 
          <div className={style.headerImg} ref= {imageRef}>
            <img className={style.header__desktop} src="/img/header-desktop.svg" alt="manufactory-desktop"/>

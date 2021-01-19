@@ -1,6 +1,6 @@
 .header{
   position:relative;
-  background: #0E0E0E;
+  background: url('/img/main.png') center / cover;
 }
 
 .headerMain{
@@ -32,34 +32,6 @@
   align-items:center;
 }
 
-.bg1{
-  position:absolute;
-  z-index:1;
-  top:0;
-  right:0;
-}
-
-.bg2{
-  background: linear-gradient(227.75deg, #303030 -139.11%, #101010 100%);
-  opacity: 0.3;
-  width:150px;
-  height:150px;
-  position:absolute;
-  bottom:0;
-  left:0;
-}
-
-.bg2Inner{
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:75px;
-  height:75px;
-  background: linear-gradient(227.75deg, #303030 -139.11%, #101010 100%);
-  opacity: 0.5;
-  box-shadow: 17px -19px 23px rgba(0, 0, 0, 0.36);
-}
-
 .headerImg{
   width:95%;
   height:600px;
@@ -85,4 +57,18 @@
   height:100%;
   transform:rotateY(-10deg) rotateX(-4deg) skew(-3deg);
   transition:0.3s;
+}
+
+.points{
+  position:absolute;
+}
+
+.points1{
+  right:180px;
+  top:460px;
+}
+
+.points2{
+  bottom:50px;
+  right:-20px;
 }
