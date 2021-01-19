@@ -1,4 +1,4 @@
-import Head from 'next/head';
+﻿import Head from 'next/head';
 import DefaultLayout from "../components/defaultLayout/defaultLayout";
 import Header from "../components/header/header";
 import Technologies from "../components/technologies/technologies";
@@ -14,6 +14,9 @@ const Home = () => {
     <>
       <Head>
         <title>Мануфактура</title>
+
+        	
+        <meta name = "robots" content = "noindex,nofollow" />
       </Head>
 
       <DefaultLayout>
