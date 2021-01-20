@@ -24,8 +24,8 @@ const Services = () => {
   }
 
   const heightOfFixed = 500;
-  const ANIMATE_TO_LEFT = "1s linear 0s 1 normal forwards running fixed-block-to-left";
-  const ANIMATE_TO_RIGHT = "1s linear 0s 1 normal forwards running fixed-block-to-right";
+  const ANIMATE_TO_LEFT = "0.6s linear 0s 1 normal forwards running fixed-block-to-left";
+  const ANIMATE_TO_RIGHT = "0.6s linear 0s 1 normal forwards running fixed-block-to-right";
   let windowHeight;let topValue;let position;let prevPosition;
 
   const startCalculate = () => {
@@ -90,7 +90,7 @@ const Services = () => {
         else fixedRef.current.style.animation = ANIMATE_TO_RIGHT;
       }
 
-      const triangleTranslate = distanceToTop/20;
+      const triangleTranslate = distanceToTop/15;
       triangle1.current.style.transform = `translateY(${triangleTranslate}px)`;
       triangle2.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
       triangle3.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
