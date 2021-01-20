@@ -1,7 +1,6 @@
 .servicesTop{
   overflow:hidden;
   padding-top:40px;
-  perspective:2000px;
 }
 
 .servicesMain{
@@ -62,6 +61,8 @@
   transform-style:preserve-3d;
   z-index:10;
   transition:1s;
+  transform-origin: 73% 50%;
+  /* transform-origin: right; */
 }
 
 .service__mainImg{

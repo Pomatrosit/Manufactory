@@ -24,8 +24,8 @@ const Services = () => {
   }
 
   const heightOfFixed = 500;
-  const ANIMATE_TO_LEFT = "0.6s linear 0s 1 normal forwards running fixed-block-to-left";
-  const ANIMATE_TO_RIGHT = "0.6s linear 0s 1 normal forwards running fixed-block-to-right";
+  const ANIMATE_TO_LEFT = "0.8s linear 0s 1 normal forwards running fixed-block-to-left";
+  const ANIMATE_TO_RIGHT = "0.8s linear 0s 1 normal forwards running fixed-block-to-right";
   let windowHeight;let topValue;let position;let prevPosition;
 
   const startCalculate = () => {
@@ -129,8 +129,8 @@ const Services = () => {
       <div className={style.services__fixed} ref={fixedRef}>
         <img className = {style.service__mainImg} src="/img/service-main.svg" alt=""/>
         <img src="/img/service-secondary1.svg" ref={secondarySvg1Ref} alt="" className={style.service__secondaryImg}/>
-        <img src="/img/service-secondary2.svg" ref={secondarySvg2Ref} alt="" className={style.service__secondaryImg}/>
-        <img src="/img/service-secondary3.svg" ref={secondarySvg3Ref} alt="" className={style.service__secondaryImg}/>
+        <img src="/img/service-secondary1.svg" ref={secondarySvg2Ref} alt="" className={style.service__secondaryImg}/>
+        <img src="/img/service-secondary1.svg" ref={secondarySvg3Ref} alt="" className={style.service__secondaryImg}/>
         <img src="/img/service-secondary1.svg" ref={secondarySvg4Ref} alt="" className={style.service__secondaryImg}/>
       </div>
 
