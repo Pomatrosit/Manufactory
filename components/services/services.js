@@ -86,8 +86,14 @@ const Services = () => {
       }
 
       if (prevPosition !== position){
-        if (position === "left") fixedRef.current.style.animation = ANIMATE_TO_LEFT;
-        else fixedRef.current.style.animation = ANIMATE_TO_RIGHT;
+        if (position === "left") {
+          fixedRef.current.style.animation = ANIMATE_TO_LEFT;
+          secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation 1s ease forwards")
+        }
+        else {
+          fixedRef.current.style.animation = ANIMATE_TO_RIGHT;
+          secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation2 1s ease forwards")
+        }
       }
 
       const triangleTranslate = distanceToTop/15;
@@ -129,8 +135,8 @@ const Services = () => {
       <div className={style.services__fixed} ref={fixedRef}>
         <img className = {style.service__mainImg} src="/img/service-main.svg" alt=""/>
         <img src="/img/service-secondary1.svg" ref={secondarySvg1Ref} alt="" className={style.service__secondaryImg}/>
-        <img src="/img/service-secondary1.svg" ref={secondarySvg2Ref} alt="" className={style.service__secondaryImg}/>
-        <img src="/img/service-secondary1.svg" ref={secondarySvg3Ref} alt="" className={style.service__secondaryImg}/>
+        <img src="/img/service-secondary2.svg" ref={secondarySvg2Ref} alt="" className={style.service__secondaryImg}/>
+        <img src="/img/service-secondary3.svg" ref={secondarySvg3Ref} alt="" className={style.service__secondaryImg}/>
         <img src="/img/service-secondary1.svg" ref={secondarySvg4Ref} alt="" className={style.service__secondaryImg}/>
       </div>
 

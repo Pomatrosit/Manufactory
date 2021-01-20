@@ -5,6 +5,8 @@
 
 .headerMain{
   margin:110px 0 0 110px;
+  position:relative;
+  z-index:1;
 }
 
 .title{
@@ -71,4 +73,23 @@
 .points2{
   bottom:50px;
   right:-20px;
+}
+
+.glass{
+  position:absolute;
+  top:63px;
+  left:-70px;
+  right:-70px;
+  bottom:226px;
+  background: linear-gradient(244.14deg, rgba(255, 255, 255, 0.07) 2.6%, rgba(54, 32, 91, 0.07) 98.31%);
+  border-radius:50px;
+  z-index:0;
+}
+
+@media screen and (max-width:1600px){
+  .glass{
+    left:0;
+    right:0;
+    top:40px;
+  }
 }

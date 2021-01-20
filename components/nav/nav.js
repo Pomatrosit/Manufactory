@@ -3,7 +3,7 @@ import LanguageSwitcher from "./languageSwitcher";
 import style from "./nav.module.css";
 import Logo from "../logo"
 
-const Nav = ({without}) => {
+const Nav = ({without, paddingTop}) => {
 
   let links = [
     {id:1, title:"Главная", href:"/"},
@@ -17,11 +17,11 @@ const Nav = ({without}) => {
   links = links.filter(link => link.id !== without);
 
   return(
-    <nav className={style.nav}>
+    <nav className={style.nav} style={{paddingTop}}>
 
       <div className={style.logo}>
         <Logo width="40" height="40" fill="#fff" margin="0 27px 0 0"/>
-        <img src="/img/manufactory.svg" alt="manufactory-logo"/>
+        <img src="/img/manufactory.svg" alt="manufactory-logo" style={{zIndex:1}}/>
       </div>
 
       <ul className={style.links}>
@@ -35,7 +35,10 @@ const Nav = ({without}) => {
         }
       </ul>
 
-      <LanguageSwitcher />
+      {
+        //<LanguageSwitcher />
+      }
+
 
     </nav>
   )

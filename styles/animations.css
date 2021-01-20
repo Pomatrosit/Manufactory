@@ -83,28 +83,49 @@
 }
 
 @keyframes fixed-block-to-right {
-  0% { transform: perspective(150px) translateX(0%) rotateY(2deg) scaleY(1)}
-  7.61% { transform:perspective(150px) translateX(53.62%) rotateY(0deg) scaleY(1.05)}
-  11.41% { transform:perspective(150px) translateX(73.76%) rotateY(-1deg) scaleY(1.07)}
-  15.12% { transform:perspective(150px) translateX(88.13%) rotateY(-1.8deg) scaleY(1.08)}
-  22.72% { transform:perspective(150px) translateX(103.77%) rotateY(-2.1deg) scaleY(1.1)}
-  30.23% { transform:perspective(150px) translateX(107.23%) rotateY(-2.2deg) scaleY(1.1)}
-  50.25% { transform:perspective(150px) translateX(101.52%) rotateY(-2.1deg) scaleY(1.1)}
-  70.27% { transform:perspective(150px) translateX(99.65%) rotateY(-2deg) scaleY(1.1)}
-  100% { transform:perspective(150px) translateX(100%) rotateY(-2deg) scaleY(1.1)}
+  0% { transform: perspective(150px) translateX(0%) translateY(0px) rotateY(2deg) scaleY(1)}
+  7.61% { transform:perspective(150px) translateX(53.62%) translateY(20px) rotateY(0deg) scaleY(1.05)}
+  11.41% { transform:perspective(150px) translateX(73.76%) translateY(40px) rotateY(-1deg) scaleY(1.07)}
+  15.12% { transform:perspective(150px) translateX(88.13%) translateY(20px) rotateY(-1.8deg) scaleY(1.08)}
+  22.72% { transform:perspective(150px) translateX(103.77%) translateY(10px) rotateY(-2.1deg) scaleY(1.1)}
+  30.23% { transform:perspective(150px) translateX(107.23%) translateY(0px) rotateY(-2.2deg) scaleY(1.1)}
+  50.25% { transform:perspective(150px) translateX(101.52%) translateY(0px) rotateY(-2.1deg) scaleY(1.1)}
+  70.27% { transform:perspective(150px) translateX(99.65%) translateY(0px) rotateY(-2deg) scaleY(1.1)}
+  100% { transform:perspective(150px) translateX(100%) translateY(0px) rotateY(-2deg) scaleY(1.1)}
 }
 
 @keyframes fixed-block-to-left {
-  0% { transform:perspective(150px) translateX(100%) rotateY(-2deg) scaleY(1.1)}
-  7.61% { transform:perspective(150px) translateX(46.38%) rotateY(0deg) scaleY(1.05)}
-  11.41% { transform:perspective(150px) translateX(26.24%) rotateY(1deg) scaleY(1.03)}
-  15.12% { transform:perspective(150px) translateX(11.87%) rotateY(1.8deg) scaleY(1.02)}
-  22.72% { transform:perspective(150px) translateX(-3.77%) rotateY(2.1deg) scaleY(1)}
-  30.23% { transform:perspective(150px) translateX(-7.23%) rotateY(2.2deg) scaleY(1)}
-  50.25% { transform:perspective(150px) translateX(-1.52%) rotateY(2.1deg) scaleY(1)}
-  70.27% { transform:perspective(150px) translateX(0.35%) rotateY(2deg) scaleY(1)}
-  100% { transform:perspective(150px) translateX(0%) rotateY(2deg) scaleY(1)}
+  0% { transform:perspective(150px) translateX(100%) translateY(0px) rotateY(-2deg) scaleY(1.1)}
+  7.61% { transform:perspective(150px) translateX(46.38%) translateY(20px) rotateY(0deg) scaleY(1.05)}
+  11.41% { transform:perspective(150px) translateX(26.24%) translateY(40px) rotateY(1deg) scaleY(1.03)}
+  15.12% { transform:perspective(150px) translateX(11.87%) translateY(20px) rotateY(1.8deg) scaleY(1.02)}
+  22.72% { transform:perspective(150px) translateX(-3.77%) translateY(10px) rotateY(2.1deg) scaleY(1)}
+  30.23% { transform:perspective(150px) translateX(-7.23%) translateY(0px) rotateY(2.2deg) scaleY(1)}
+  50.25% { transform:perspective(150px) translateX(-1.52%) translateY(0px) rotateY(2.1deg) scaleY(1)}
+  70.27% { transform:perspective(150px) translateX(0.35%) translateY(0px) rotateY(2deg) scaleY(1)}
+  100% { transform:perspective(150px) translateX(0%) translateY(0px) rotateY(2deg) scaleY(1)}
 }
+
+@keyframes secondary-image-animation {
+  0% { transform:translateX(0px)}
+  10% { transform:translateX(-30px)}
+  15% { transform:translateX(-40px)}
+  20% { transform:translateX(-20px)}
+  30% { transform:translateX(-14px)}
+  50% { transform:translateX(1px)}
+  100% { transform:translateX(0px)}
+}
+
+@keyframes secondary-image-animation2 {
+  0% { transform:translateX(0px)}
+  10% { transform:translateX(30px)}
+  15% { transform:translateX(40px)}
+  20% { transform:translateX(20px)}
+  30% { transform:translateX(14px)}
+  50% { transform:translateX(-1px)}
+  100% { transform:translateX(0px)}
+}
+
 
 @keyframes card-hover {
   0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }

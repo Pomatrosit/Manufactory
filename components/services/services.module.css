@@ -62,7 +62,6 @@
   z-index:10;
   transition:1s;
   transform-origin: 73% 50%;
-  /* transform-origin: right; */
 }
 
 .service__mainImg{

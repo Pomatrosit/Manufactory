@@ -2,7 +2,7 @@
   display:flex;
   align-items:center;
   justify-content: space-between;
-  padding-top:50px;
+  padding-top:113px;
 }
 
 .logo{
@@ -53,4 +53,10 @@
   margin-left:10px;
   cursor:pointer;
   text-transform: uppercase;
+}
+
+@media screen and (max-width:1600px){
+  .nav{
+    padding:80px 40px 0 40px;
+  }
 }
