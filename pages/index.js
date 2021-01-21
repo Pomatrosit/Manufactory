@@ -13,10 +13,8 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Мануфактура</title>
-
-        	
-        <meta name = "robots" content = "noindex,nofollow" />
+        <title>Создание и разработка сайта под ключ, продвижение сайта</title>
+        <meta name="description" content="В нашей веб-студии вы можете заказать сайт под ключ, а также его продвижение. Веб студия Мануфактура." />
       </Head>
 
       <DefaultLayout>
