@@ -1,5 +1,5 @@
 import style from "./footer.module.css";
-import Logo from "../logo";
+import Logo from "../svgComponents/logo";
 
 const Footer = () => {
   return(

@@ -1,5 +1,12 @@
 import style from "./advantages.module.css";
 import DecorativeSquare from "../decorative/decorativeSquare";
+import Adv1Outer from "../svgComponents/adv1Outer";
+import Adv1Inner from "../svgComponents/adv1Inner";
+import Adv2Outer from "../svgComponents/adv2Outer";
+import Adv2Inner from "../svgComponents/adv2Inner";
+import Adv3Full from "../svgComponents/adv3Full";
+import Adv4Top from "../svgComponents/adv4Top";
+import Adv4Bottom from "../svgComponents/adv4Bottom";
 
 const Advantages = () => {
   return(
@@ -14,7 +21,10 @@ const Advantages = () => {
           <div className={style.servicesMain}>
 
             <figure className={style.servicesItem}>
-               <img className={style.servicesItem__img} src="/img/adv1.svg" alt="conversion"/>
+               <div className={style.servicesItem__img}>
+                 <Adv1Outer />
+                 <Adv1Inner />
+               </div>
                <div className={style.servicesItem__description}>
                  <figcaption className={style.servicesItem__title}>Конверсия</figcaption>
                  <p className={style.servicesItem__text}>Создаём и используем в своих продуктах качественно продуманные
@@ -23,7 +33,10 @@ const Advantages = () => {
             </figure>
 
             <figure className={style.servicesItem}>
-               <img className={style.servicesItem__img} src="/img/adv2.svg" alt="conversion"/>
+               <div className={style.servicesItem__img}>
+                 <Adv2Outer />
+                 <Adv2Inner />
+               </div>
                <div className={style.servicesItem__description}>
                  <figcaption className={style.servicesItem__title}>Дизайн</figcaption>
                  <p className={style.servicesItem__text}>Используем предметное фото, 3-D моделирование и анимацию
@@ -32,7 +45,9 @@ const Advantages = () => {
             </figure>
 
             <figure className={style.servicesItem}>
-               <img className={style.servicesItem__img} src="/img/adv3.svg" alt="conversion"/>
+               <div className={style.servicesItem__img}>
+                 <Adv3Full />
+               </div>
                <div className={style.servicesItem__description}>
                  <figcaption className={style.servicesItem__title}>Инструменты</figcaption>
                  <p className={style.servicesItem__text}>Разрабатываем сайты на связке React.js + Next.js, что позволяет добиться высокой скорости работы
@@ -41,7 +56,10 @@ const Advantages = () => {
             </figure>
 
             <figure className={style.servicesItem}>
-               <img className={style.servicesItem__img} src="/img/adv4.svg" alt="conversion"/>
+               <div className={style.servicesItem__img}>
+                 <Adv4Top />
+                 <Adv4Bottom />
+               </div>
                <div className={style.servicesItem__description}>
                  <figcaption className={style.servicesItem__title}>Сопровождение</figcaption>
                  <p className={style.servicesItem__text}>Остаёмся со своими клиентами на связи 24/7, оптимизируем и

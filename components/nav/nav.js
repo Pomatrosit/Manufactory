@@ -1,7 +1,7 @@
 import NavLink from "./navLink";
 import LanguageSwitcher from "./languageSwitcher";
 import style from "./nav.module.css";
-import Logo from "../logo"
+import Logo from "../svgComponents/logo"
 
 const Nav = ({without, paddingTop}) => {
 
