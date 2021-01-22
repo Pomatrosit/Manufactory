@@ -25,7 +25,12 @@ const DropDown = ({setActiveCategory, setCountOfCards}) => {
     if (!isDropDownOpen) afterRef.current.style.animation = "button-background-close-animation 1s linear forwards";
   }
 
+  const onClickOutside = () => {
+    setDropDownOpen(false);
+  }
+
   return(
+    <>
     <div className={style.dropdown}
          onClick = {() => setDropDownOpen(prev => !prev)}>
 
@@ -54,7 +59,7 @@ const DropDown = ({setActiveCategory, setCountOfCards}) => {
               </div>)
           }
           </div>
-          
+
         </div>
       }
 
@@ -62,8 +67,12 @@ const DropDown = ({setActiveCategory, setCountOfCards}) => {
            className={style.dropdown__after}
            style={{border:isDropDownOpen ? "1px solid #492A64" : ""}}
            onMouseEnter={onMouseEnter}
-           onMouseLeave={onMouseLeave}></div>
+           onMouseLeave={onMouseLeave}>
+      </div>
     </div>
+
+    {isDropDownOpen && <div className={style.dropdown__closeArea} onClick={onClickOutside}></div>}
+    </>
   )
 }
 

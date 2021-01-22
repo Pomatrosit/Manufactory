@@ -8,10 +8,8 @@ const Nav = ({without, paddingTop}) => {
   let links = [
     {id:1, title:"Главная", href:"/"},
     {id:2, title:"Портфолио", href:"/potfolio"},
-    {id:3, title:"Цены", href:"/prices"},
-    {id:4, title:"Контакты", href:"/contacts"},
-    {id:5, title:"Статьи", href:"/blog"},
-    {id:6, title:"Компания", href:"/about"}
+    {id:3, title:"Решения", href:"/services"},
+    {id:4, title:"Контакты", href:"/contacts"}
   ]
 
   links = links.filter(link => link.id !== without);

@@ -33,17 +33,18 @@
   left:0;
   border-radius: 10px;
   z-index:3;
-
 }
 
 .option{
-  height:45px;
+  height:35px;
   display:flex;
   align-items:Center;
   padding-left:20px;
   font-size: 13px;
   color: #968D9D;
   transform-origin: top;
+  border-radius:5px;
+  margin:5px 0;
 }
 
 .options__after{
@@ -60,6 +61,14 @@
 .options__content{
   position:relative;
   z-index:1;
+}
+
+.dropdown__closeArea{
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
 }
 
 @keyframes open-options {

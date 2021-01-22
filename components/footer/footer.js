@@ -23,10 +23,9 @@ const Footer = () => {
           <div className={style.footer__menu}>
              <h3 className={style.footer__title}>Компания</h3>
              <div className={style.footer__links}>
+               <a href="#" className = {style.footer__link}>Главная</a>
                <a href="#" className = {style.footer__link}>Портфолио</a>
-               <a href="#" className = {style.footer__link}>Блог</a>
-               <a href="#" className = {style.footer__link}>Статьи</a>
-               <a href="#" className = {style.footer__link}>Цены</a>
+               <a href="#" className = {style.footer__link}>Решения</a>
                <a href="#" className = {style.footer__link}>Контакты</a>
              </div>
           </div>
@@ -50,7 +49,7 @@ const Footer = () => {
         </div>
 
         <div className={style.footer__bottom}>
-          
+
           <a className={style.policy} href="">Политика конфиденциальности</a>
           <p> © Веб-студия. Мануфактура. Все права защищены</p>
         </div>

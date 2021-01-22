@@ -63,6 +63,7 @@
   color: #373737;
   margin-bottom: 20px;
   width:50%;
+  transition:0.3s;
 }
 
 .footer__contacts{
@@ -116,4 +117,10 @@
   right:-1000px;
   z-index:0;
   background: rgba(255, 255, 255, 0.5);
+}
+
+@media(hover:hover){
+  .footer__link:hover{
+    color:#492A64;
+  }
 }

@@ -88,11 +88,11 @@ const Services = () => {
       if (prevPosition !== position){
         if (position === "left") {
           fixedRef.current.style.animation = ANIMATE_TO_LEFT;
-          secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation 1s ease forwards")
+          secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation 1.1s ease forwards")
         }
         else {
           fixedRef.current.style.animation = ANIMATE_TO_RIGHT;
-          secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation2 1s ease forwards")
+          secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation2 1.1s ease forwards")
         }
       }
 
