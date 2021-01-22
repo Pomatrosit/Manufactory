@@ -5,6 +5,7 @@ import {useEffect, useRef} from "react";
 // import useTranslation from 'next-translate/useTranslation';
 import {connect} from "react-redux";
 import {setModalOpen} from "../../store/actions/modalAction";
+import Image from "next/image";
 
 const Header = ({setModalOpen}) => {
 
@@ -65,6 +66,14 @@ const Header = ({setModalOpen}) => {
          </div>
 
        </div>
+
+       <Image
+         src="/img/main.png"
+         alt="Студия разработки и продвижения сайтов Мануфактура"
+         layout="fill"
+         objectFit="cover"
+         quality={100}
+       />
      </section>
   )
 }

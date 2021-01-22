@@ -1,6 +1,6 @@
 .header{
   position:relative;
-  background: url('/img/main.png') center / cover;
+  /* background: url('/img/main.png') center / cover; */
 }
 
 .headerMain{

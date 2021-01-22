@@ -2,6 +2,7 @@ import style from "./reviews.module.css";
 import DecorativeSquare from "../decorative/decorativeSquare";
 import ReviewItem from "./reviewItem";
 import {useRef, useEffect} from "react";
+import Image from "next/image";
 
 const Reviews = () => {
 
@@ -220,7 +221,17 @@ const Reviews = () => {
         </div>
 
       </div>
-      <img className={style.bgImage} src="/img/girl.png" alt="girl"/>
+
+      <div className={style.bgImage}>
+        <Image
+          src="/img/girl.png"
+          alt="Отзывы веб-студия Мануфактура"
+          width={615}
+          height={565}
+          quality={100}
+        />
+      </div>
+
     </section>
   )
 }
