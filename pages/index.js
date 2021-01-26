@@ -7,7 +7,6 @@ import Services from "../components/services/services";
 import Portfolio from "../components/portfolio/portfolio";
 import Reviews from "../components/reviews/reviews";
 import Question from "../components/question/question";
-import dynamic from 'next/dynamic';
 
 const Home = () => {
   return (
