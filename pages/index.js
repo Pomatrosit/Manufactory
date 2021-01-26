@@ -1,14 +1,13 @@
 ﻿import Head from 'next/head';
 import DefaultLayout from "../components/defaultLayout/defaultLayout";
 import Header from "../components/header/header";
+import Technologies from "../components/technologies/technologies";
+import Advantages from "../components/advantages/advantages";
+import Services from "../components/services/services";
+import Portfolio from "../components/portfolio/portfolio";
+import Reviews from "../components/reviews/reviews";
+import Question from "../components/question/question";
 import dynamic from 'next/dynamic';
-
-const Technologies = dynamic(() => import('../components/technologies/technologies'));
-const Advantages = dynamic(() => import('../components/advantages/advantages'));
-const Services = dynamic(() => import('../components/services/services'));
-const Portfolio = dynamic(() => import('../components/portfolio/portfolio'));
-const Reviews = dynamic(() => import('../components/reviews/reviews'));
-const Question = dynamic(() => import('../components/question/question'));
 
 const Home = () => {
   return (

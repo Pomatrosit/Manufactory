@@ -1,10 +1,9 @@
+import Footer from "../footer/footer";
 import {connect} from "react-redux";
 import {setModalOpen} from "../../store/actions/modalAction";
 import dynamic from 'next/dynamic';
-
-const Footer = dynamic(() => import('../footer/footer'));
-const Modal = dynamic(() => import('../NextModal/NextModal'));
-const Form = dynamic(() => import('../NextForm/NextForm'));
+import Modal from "../NextModal/NextModal";
+import Form from "../NextForm/NextForm";
 
 const DefaultLayout = ({children, isModalOpen, setModalOpen}) => {
 
@@ -16,10 +15,12 @@ const DefaultLayout = ({children, isModalOpen, setModalOpen}) => {
       { isModalOpen &&
         <Modal css={{padding:"0px", maxWidth:"360px"}}
                setModalOpen={setModalOpen}
-        >
-            <Form title="Оставьте заявку на обратный звонок"
-                  css={{padding:"40px", maxWidth:"100%"}}
-            />
+               >
+
+          <Form title="Оставьте заявку на обратный звонок"
+                css={{padding:"40px", maxWidth:"100%"}}
+          />
+
       </Modal>
       }
     </>
