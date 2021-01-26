@@ -1,6 +1,7 @@
 import style from "./services.module.css";
 import DecorativeSquare from "../decorative/decorativeSquare";
 import { useRef, useEffect } from "react";
+import Image from "next/image";
 
 const Services = () => {
 
@@ -137,7 +138,7 @@ const Services = () => {
         <img src="/img/service-secondary1.svg" ref={secondarySvg1Ref} alt="" className={style.service__secondaryImg}/>
         <img src="/img/service-secondary2.svg" ref={secondarySvg2Ref} alt="" className={style.service__secondaryImg}/>
         <img src="/img/service-secondary3.svg" ref={secondarySvg3Ref} alt="" className={style.service__secondaryImg}/>
-        <img src="/img/service-secondary1.svg" ref={secondarySvg4Ref} alt="" className={style.service__secondaryImg}/>
+        <img src="/img/service-secondary4.svg" ref={secondarySvg4Ref} alt="" className={style.service__secondaryImg}/>
       </div>
 
       <div className="app-wrapper" style={{zIndex:5}}>
@@ -177,10 +178,18 @@ const Services = () => {
 
        </div>
 
-       <img ref={triangle1} className ={`${style.triangle} ${style.triangle1}`}src="/img/triangle.png" alt=""/>
-       <img ref={triangle2} className ={`${style.triangle} ${style.triangle2}`}src="/img/triangle.png" alt=""/>
-       <img ref={triangle3}className ={`${style.triangle} ${style.triangle3}`}src="/img/triangle.png" alt=""/>
-       <img ref={triangle4} className ={`${style.triangle} ${style.triangle4}`}src="/img/triangle.png" alt=""/>
+       <div ref={triangle1} className ={`${style.triangle} ${style.triangle1}`}>
+         <Image src="/img/triangle.png" alt="triangle" width={375} height={460} />
+       </div>
+       <div ref={triangle2} className ={`${style.triangle} ${style.triangle2}`}>
+         <Image src="/img/triangle.png" alt="triangle" width={375} height={460} />
+       </div>
+       <div ref={triangle3} className ={`${style.triangle} ${style.triangle3}`}>
+         <Image src="/img/triangle.png" alt="triangle" width={375} height={460} />
+       </div>
+       <div ref={triangle4} className ={`${style.triangle} ${style.triangle4}`}>
+         <Image src="/img/triangle.png" alt="triangle" width={375} height={460} />
+       </div>
 
       </div>
     </section>
