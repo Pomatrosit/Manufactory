@@ -1,6 +1,5 @@
 .header{
   position:relative;
-  /* background: url('/img/main.png') center / cover; */
 }
 
 .headerMain{
@@ -55,7 +54,7 @@
 .header__mobile{
   position:absolute;
   top:-50px;
-  left:70%;
+  right:-40px;
   height:100%;
   transform:rotateY(-10deg) rotateX(-4deg) skew(-3deg);
   transition:0.3s;
@@ -92,5 +91,22 @@
     left:0;
     right:0;
     top:40px;
+  }
+}
+
+@media screen and (max-width:1000px){
+  .header__mobile{
+    height:90%;
+    top:0px;
+  }
+  .headerMain{
+    margin: 110px 0 0 40px;
+  }
+}
+
+@media screen and (max-width:800px){
+  .header__mobile{
+    height:80%;
+    top:50px;
   }
 }

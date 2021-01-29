@@ -60,3 +60,9 @@
     padding:80px 40px 0 40px;
   }
 }
+
+@media screen and (max-width:800px){
+  .links{
+    display:none;
+  }
+}

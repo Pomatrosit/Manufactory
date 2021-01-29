@@ -27,9 +27,10 @@ const Services = () => {
   const heightOfFixed = 500;
   const ANIMATE_TO_LEFT = "0.8s linear 0s 1 normal forwards running fixed-block-to-left";
   const ANIMATE_TO_RIGHT = "0.8s linear 0s 1 normal forwards running fixed-block-to-right";
-  let windowHeight;let topValue;let position;let prevPosition;
+  let windowHeight;let topValue;let position;let prevPosition;let windowWidth;
 
   const startCalculate = () => {
+    windowWidth = document.documentElement.clientWidth;
     windowHeight = document.documentElement.clientHeight;
     topValue = (windowHeight - heightOfFixed)/2;
     position = "left";
@@ -42,59 +43,64 @@ const Services = () => {
 
     window.addEventListener("scroll", e => {
       const distanceToTop = staticBlockRef.current.getBoundingClientRect().top;
-      const distanceToLastStep = lastStepRef.current.getBoundingClientRect().top;
-      const distanceToTop2 = topValue - distanceToTop;
 
-      if (distanceToTop <= topValue){
-        fixedRef.current.style.transition = "0s";
-        fixedRef.current.style.position="fixed";
-        fixedRef.current.style.top = `${topValue}px`;
-      }
+      if (windowWidth > 1000){
+        const distanceToLastStep = lastStepRef.current.getBoundingClientRect().top;
+        const distanceToTop2 = topValue - distanceToTop;
 
-      if (distanceToTop >= topValue){
-        fixedRef.current.style.transition = "0s";
-        fixedRef.current.style.position="absolute";
-        fixedRef.current.style.top = `0`;
-        position="left";
-      }
-
-      if (distanceToLastStep <= topValue){
-        fixedRef.current.style.transition = "0s";
-        fixedRef.current.style.position="absolute";
-        fixedRef.current.style.top = `${lastStepRef.current.offsetTop}px`;
-        position="right";
-      }
-
-      if (distanceToTop2 < 400){
-        hideSecondarySvgs();
-        secondarySvg1Ref.current.style.opacity="1";
-        position="left";
-      } else
-      if (distanceToTop2 >= 400 && distanceToTop2 < 1300){
-        hideSecondarySvgs();
-        secondarySvg2Ref.current.style.opacity="1";
-        position="right";
-      } else
-      if (distanceToTop2 >= 1300 && distanceToTop2 < 2200){
-        hideSecondarySvgs();
-        secondarySvg3Ref.current.style.opacity="1";
-        position="left";
-      } else
-      if (distanceToTop2 >= 2200){
-        hideSecondarySvgs();
-        secondarySvg4Ref.current.style.opacity="1";
-        position="right";
-      }
-
-      if (prevPosition !== position){
-        if (position === "left") {
-          fixedRef.current.style.animation = ANIMATE_TO_LEFT;
-          secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation 1.1s ease forwards")
+        if (distanceToTop <= topValue){
+          fixedRef.current.style.transition = "0s";
+          fixedRef.current.style.position="fixed";
+          fixedRef.current.style.top = `${topValue}px`;
         }
-        else {
-          fixedRef.current.style.animation = ANIMATE_TO_RIGHT;
-          secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation2 1.1s ease forwards")
+
+        if (distanceToTop >= topValue){
+          fixedRef.current.style.transition = "0s";
+          fixedRef.current.style.position="absolute";
+          fixedRef.current.style.top = `0`;
+          position="left";
         }
+
+        if (distanceToLastStep <= topValue){
+          fixedRef.current.style.transition = "0s";
+          fixedRef.current.style.position="absolute";
+          fixedRef.current.style.top = `${lastStepRef.current.offsetTop}px`;
+          position="right";
+        }
+
+        if (distanceToTop2 < 400){
+          hideSecondarySvgs();
+          secondarySvg1Ref.current.style.opacity="1";
+          position="left";
+        } else
+        if (distanceToTop2 >= 400 && distanceToTop2 < 1300){
+          hideSecondarySvgs();
+          secondarySvg2Ref.current.style.opacity="1";
+          position="right";
+        } else
+        if (distanceToTop2 >= 1300 && distanceToTop2 < 2200){
+          hideSecondarySvgs();
+          secondarySvg3Ref.current.style.opacity="1";
+          position="left";
+        } else
+        if (distanceToTop2 >= 2200){
+          hideSecondarySvgs();
+          secondarySvg4Ref.current.style.opacity="1";
+          position="right";
+        }
+
+        if (prevPosition !== position){
+          if (position === "left") {
+            fixedRef.current.style.animation = ANIMATE_TO_LEFT;
+            secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation 1.1s ease forwards")
+          }
+          else {
+            fixedRef.current.style.animation = ANIMATE_TO_RIGHT;
+            secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation2 1.1s ease forwards")
+          }
+        }
+
+        prevPosition = position;
       }
 
       const triangleTranslate = distanceToTop/15;
@@ -102,8 +108,6 @@ const Services = () => {
       triangle2.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
       triangle3.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
       triangle4.current.style.transform = `translateY(${triangleTranslate}px) rotate(180deg)`;
-
-      prevPosition = position;
     });
 
 
@@ -151,6 +155,10 @@ const Services = () => {
             <figcaption className={style.mainBlock__title}>Одностраничные сайты / Landing page и сайты визитки</figcaption>
             <p className={style.mainBlock__text}>Небольшие сайты главной задачей которых является конвертации посетителя
                в покупателя или клиента компании благодаря строго структурированной подаче информации и побуждения к действию</p>
+            <div className={style.mainBlock__mobile}>
+               <img src="/img/service-main.svg" className={style.mainBlock__mobile1}/>
+               <img src="/img/service-secondary1.svg" className={style.mainBlock__mobile2}/>
+            </div>
           </figure>
 
           <figure className={style.mainBlock__step}>
@@ -158,6 +166,10 @@ const Services = () => {
             <figcaption className={style.mainBlock__title}>Многостраничники и корпоративные сайты</figcaption>
             <p className={style.mainBlock__text}>Небольшие сайты главной задачей которых является конвертации посетителя в покупателя или клиента
               компании благодаря строго структурированной подаче информации и побуждения к действию</p>
+            <div className={style.mainBlock__mobile}>
+               <img src="/img/service-main.svg" className={style.mainBlock__mobile1}/>
+               <img src="/img/service-secondary2.svg" className={style.mainBlock__mobile2}/>
+            </div>
           </figure>
 
           <figure className={`${style.mainBlock__step} ${style.toRight}`}>
@@ -165,6 +177,10 @@ const Services = () => {
             <figcaption className={style.mainBlock__title}>Интернет-магазин или интернет каталог</figcaption>
             <p className={style.mainBlock__text}>Небольшие сайты главной задачей которых является конвертации посетителя
                в покупателя или клиента компании благодаря строго структурированной подаче информации и побуждения к действию</p>
+            <div className={style.mainBlock__mobile}>
+                <img src="/img/service-main.svg" className={style.mainBlock__mobile1}/>
+                <img src="/img/service-secondary3.svg" className={style.mainBlock__mobile2}/>
+            </div>
           </figure>
 
           <figure className={style.mainBlock__step} ref={lastStepRef}>
@@ -172,6 +188,10 @@ const Services = () => {
             <figcaption className={style.mainBlock__title}>Веб-приложения </figcaption>
             <p className={style.mainBlock__text}>Небольшие сайты главной задачей которых является конвертации посетителя в покупателя или клиента
               компании благодаря строго структурированной подаче информации и побуждения к действию</p>
+            <div className={style.mainBlock__mobile}>
+                <img src="/img/service-main.svg" className={style.mainBlock__mobile1}/>
+                <img src="/img/service-secondary4.svg" className={style.mainBlock__mobile2}/>
+            </div>
           </figure>
 
         </div>

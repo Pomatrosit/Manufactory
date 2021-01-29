@@ -1,6 +1,6 @@
 .servicesTop{
   overflow:hidden;
-  padding-top:40px;
+  padding-top:100px;
 }
 
 .servicesMain{
@@ -113,4 +113,55 @@
   top:2800px;
   right:0;
   transform:rotate(180deg);
+}
+
+.mainBlock__mobile{
+  display:none;
+  position:relative;
+  z-index:2;
+}
+
+.mainBlock__mobile2{
+  position:absolute;
+  bottom:-50px;
+  right:0;
+  height:400px;
+}
+
+.mainBlock__mobile1{
+  height:500px;
+}
+
+@media screen and (max-width:1300px){
+  .triangle2{
+    right:40px;
+  }
+}
+
+@media screen and (max-width:1000px){
+  .services__fixed{
+    display:none;
+  }
+
+  .mainBlock__mobile{
+    display:block;
+  }
+
+  .mainBlock__step{
+    width:100%;
+    padding-top:30px;
+  }
+
+  .triangle1{top:400px;}
+  .triangle2{top:1350px;}
+  .triangle3{top:2300px;}
+  .triangle4{top:3200px;}
+
+  .servicesMain{
+    margin-bottom:200px;
+  }
+
+  .mainBlock__text{
+    margin-bottom:50px;
+  }
 }

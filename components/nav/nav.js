@@ -1,5 +1,5 @@
 import NavLink from "./navLink";
-import LanguageSwitcher from "./languageSwitcher";
+// import LanguageSwitcher from "./languageSwitcher";
 import style from "./nav.module.css";
 import Logo from "../svgComponents/logo"
 
