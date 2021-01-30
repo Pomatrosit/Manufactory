@@ -21,10 +21,12 @@ const Reviews = () => {
   let startPos;let trackTransform; let maxTrackTransform;
   let startPacmanPos;let pacmanTransform; let maxPacmanTransform;
   let pacmanIsActive=false;
+  let reviewWidth=376;
 
   const startCalculations = () => {
+    if (document.documentElement.clientWidth < 500) reviewWidth = 280; else reviewWidth=376;
     const length = trackRef.current.children.length;
-    trackRef.current.style.width = `${376*length + (length - 1)*50}px`;
+    trackRef.current.style.width = `${reviewWidth*length + (length - 1)*50}px`;
     trackRef.current.style.transform="translateX(0px)";
     pacmanRef.current.style.transform = "translateX(0px)";
     maxTrackTransform = wrapperRef.current.offsetWidth - trackRef.current.offsetWidth;
@@ -177,11 +179,10 @@ const Reviews = () => {
              onMouseDown={trackMouseDownHandler}
              onTouchStart={trackTouchStartHandler}
         >
-          <ReviewItem width={376}/>
-          <ReviewItem width={376}/>
-          <ReviewItem width={376}/>
-          <ReviewItem width={376}/>
-
+          <ReviewItem width={reviewWidth}/>
+          <ReviewItem width={reviewWidth}/>
+          <ReviewItem width={reviewWidth}/>
+          <ReviewItem width={reviewWidth}/>
 
         </div>
 

@@ -53,3 +53,15 @@
     padding:130px 30px 80px 30px;
   }
 }
+
+@media screen and (max-width:800px){
+  .services{
+    padding:130px 20px 0px 20px;
+  }
+}
+
+@media screen and (max-width:700px){
+  .servicesItem{
+    width:100%;
+  }
+}

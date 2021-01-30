@@ -119,4 +119,13 @@
   .portfolio__main{
     justify-content: space-between;
   }
+  .portfolio__top{
+    margin-bottom:20px;
+  }
+}
+
+@media screen and (max-width:550px){
+  .card{
+    width:100%;
+  }
 }

@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
 
           <div className={style.footer__contacts}>
-            <h3 className={style.footer__title} style={{marginBottom:20}}>Контакты</h3>
+            <h3 className={style.footer__title} style={{marginBottom:35}}>Контакты</h3>
             <div className={style.footer__contactsBlock}>
               <img src="/img/place.svg" alt="Киров"/>
               <span>г. Киров</span>

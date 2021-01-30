@@ -85,6 +85,12 @@ const Button = ({css, text, clickHandler}) => {
         position:relative;
         z-index:10;
       }
+
+      @media screen and (max-width:500px){
+        .button{
+          width:${css.adaptiveWidth500 || '250px'} 
+        }
+      }
       `}</style>
     </>
   )

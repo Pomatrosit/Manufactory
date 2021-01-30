@@ -23,8 +23,8 @@ const ReviewItem = ({img, text, title, width}) => {
 
       <div className={style.reviewItem__content}>
         <img src="/img/review.png" alt="" className={style.reviewItem__img}/>
-        <p className={style.reviewItem__text}>Благодарим команду Мануфактуры за отлично проделанную работу, ребята знают своё дело,
-          им можно доверять, с ними можно работать, хоть они и пьют бывает иногда</p>
+        <p className={style.reviewItem__text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla sed ducimus
+          mollitia similique labore, quis ipsam, ipsum odio maiores nobis culpa nemo aliquid. Nemo, nam.</p>
         <figcaption className={style.reviewItem__title}><span>Олег Калинин, &nbsp;</span> Директор студии Blood Rite</figcaption>
       </div>
 

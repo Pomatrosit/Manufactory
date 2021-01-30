@@ -17,7 +17,8 @@ const Question = () => {
               margin:"0 30px 0 0",
               fontSize:"19px",
               color:"#fff",
-              fontWeight:"500"
+              fontWeight:"500",
+              adaptiveWidth500:"100%"
             }}
             text="Позвонить по телефону"/>
           <Button
@@ -29,7 +30,8 @@ const Question = () => {
                 margin:"0",
                 fontSize:"19px",
                 color:"#684289",
-                fontWeight:"500"
+                fontWeight:"500",
+                adaptiveWidth500:"100%"
               }}
             text="Написать в мессенджер"/>
         </div>

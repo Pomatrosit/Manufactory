@@ -10,7 +10,7 @@
 
 .reviews__track{
   margin-top:-100px;
-  padding:0 50px;
+  padding:0 30px;
   display:flex;
   width:1000%;
   margin-bottom:130px;
@@ -113,4 +113,19 @@
   position:absolute;
   bottom:-5px;
   left:0;
+}
+
+@media screen and (max-width:500px){
+  .reviews__track{
+    padding:0 5px;
+  }
+  .reviewItem__text{
+    height:150px;
+  }
+  .reviews__top{
+    padding:120px 0 100px 0;
+  }
+  .reviews__track{
+    margin-bottom:80px;
+  }
 }

@@ -33,6 +33,10 @@ const Nav = ({without, paddingTop}) => {
         }
       </ul>
 
+      <div className={style.burger}>
+
+      </div>
+
       {
         //<LanguageSwitcher />
       }

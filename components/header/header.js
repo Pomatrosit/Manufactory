@@ -41,7 +41,8 @@ const Header = ({setModalOpen}) => {
                  background:"#684289",
                  boxShadow:"4px 4px 5px rgba(0, 0, 0, 0.25)",
                  margin:"0 16px 0 0",
-                 fontSize:"19px"
+                 fontSize:"19px",
+                 adaptiveWidth500:"100%"
                }}
                text="Смотреть работы"/>
              <Button
@@ -51,7 +52,8 @@ const Header = ({setModalOpen}) => {
                 height:"50px",
                 background:"#D4B57F",
                 boxShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)",
-                fontSize:"19px"
+                fontSize:"19px",
+                adaptiveWidth500:"100%"
               }}
               text="Оставить заявку"/>
            </div>
