@@ -153,9 +153,9 @@
   }
 
   .triangle1{top:400px;}
-  .triangle2{top:1350px;}
-  .triangle3{top:2300px;}
-  .triangle4{top:3200px;}
+  .triangle2{top:1300px;}
+  .triangle3{top:2250px;}
+  .triangle4{top:3060px;}
 
   .servicesMain{
     margin-bottom:200px;
@@ -186,10 +186,12 @@
   .mainBlock__mobile2{
     max-width:80%;
   }
-  .triangle1{top:500px;}
-  .triangle2{top:1400px;}
-  .triangle3{top:2350px;}
-  .triangle4{top:3300px;}
+  .mainBlock__subtitle{
+    margin-bottom:30px;
+  }
+  .mainBlock__title{
+    margin-bottom:30px;
+  }
 }
 
 @media screen and (max-width:400px){

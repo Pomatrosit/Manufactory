@@ -14,11 +14,13 @@ const Header = ({setModalOpen}) => {
   const imageMobileRef = useRef();
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (imageRef.current) imageRef.current.style.transform =  `translateY(${150 - window.pageYOffset/20}px)`;
-      if (imageMobileRef.current) imageMobileRef.current.style.transform =
-      `translateY(${-window.pageYOffset/15}px) rotateY(-10deg) rotateX(-4deg) skew(-3deg)`;
-    });
+    if (document.documentElement.clientWidth > 768){
+      window.addEventListener("scroll", () => {
+        if (imageRef.current) imageRef.current.style.transform =  `translateY(${150 - window.pageYOffset/20}px)`;
+        if (imageMobileRef.current) imageMobileRef.current.style.transform =
+        `translateY(${-window.pageYOffset/15}px) rotateY(-10deg) rotateX(-4deg) skew(-3deg)`;
+      });
+    }
   }, []);
 
   return(

@@ -101,13 +101,13 @@ const Services = () => {
         }
 
         prevPosition = position;
-      }
 
-      const triangleTranslate = distanceToTop/15;
-      triangle1.current.style.transform = `translateY(${triangleTranslate}px)`;
-      triangle2.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
-      triangle3.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
-      triangle4.current.style.transform = `translateY(${triangleTranslate}px) rotate(180deg)`;
+        const triangleTranslate = distanceToTop/15;
+        triangle1.current.style.transform = `translateY(${triangleTranslate}px)`;
+        triangle2.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
+        triangle3.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
+        triangle4.current.style.transform = `translateY(${triangleTranslate}px) rotate(180deg)`;
+      }
     });
 
 
