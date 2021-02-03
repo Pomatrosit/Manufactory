@@ -36,6 +36,10 @@ const Reviews = () => {
   useEffect(() => {
     startCalculations();
     window.addEventListener("resize", startCalculations);
+
+    return () => {
+      window.removeEventListener("resize", startCalculations);
+    }
   }, []);
 
   const eating = translate => {

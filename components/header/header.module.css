@@ -79,11 +79,27 @@
   top:63px;
   left:-70px;
   right:-70px;
-  bottom:226px;
+  bottom:100px;
   background: linear-gradient(244.14deg, rgba(255, 255, 255, 0.07) 2.6%, rgba(54, 32, 91, 0.07) 98.31%);
   border-radius:50px;
   z-index:0;
   border: 3px solid #29233F;
+}
+
+.header__offer{
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #684289;
+  margin-bottom: 27px;
+  letter-spacing: 0.1em;
+}
+
+.header__solutions{
+  padding-top:40px;
+  display:flex;
+  justify-content:space-between;
+  transform:translateY(50px);
 }
 
 @media screen and (max-width:1600px){
@@ -91,6 +107,9 @@
     left:0;
     right:0;
     top:40px;
+  }
+  .header__solutions{
+    padding-right:40px;
   }
 }
 

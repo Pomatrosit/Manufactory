@@ -1,26 +1,30 @@
 import style from "./nav.module.css";
 import {useRef} from "react";
-import Link from "next/link";
+import Router from "next/router";
 
 const NavLink = ({title, href}) => {
 
   const shapeRef = useRef();
 
   const onMouseEnter = () => {
-    shapeRef.current.style.animation = "link-open-animation 1s ease-in forwards";
+    if (document.documentElement.clientWidth > 768){
+      shapeRef.current.style.animation = "link-open-animation 1s ease-in forwards";
+    }
   }
 
   const onMouseLeave = () => {
     shapeRef.current.style.animation = "link-close-animation 0.3s ease-in forwards";
   }
 
+  const push = () => {
+    Router.push(href).then(() => window.scrollTo (0, 0));
+  }
+
   return(
-      <Link href={href}>
-        <a className={style.link} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+        <li className={style.link} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={push}>
            {title}
            <div className={style.linkShape} ref = {shapeRef}></div>
-        </a>
-      </Link>
+        </li>
   )
 }
 

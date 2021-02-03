@@ -5,11 +5,11 @@ import Form from "../NextForm/NextForm";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 
-const DefaultLayout = ({children, isModalOpen, setModalOpen, navWithout, h1, h2}) => {
+const DefaultLayout = ({children, isModalOpen, setModalOpen, navWithout, h1, h2, pageId}) => {
 
   return(
     <>
-      <Header navWithout={navWithout} h1={h1} h2={h2}/>
+      <Header navWithout={navWithout} h1={h1} h2={h2} pageId={pageId}/>
       {children}
       <Footer />
 

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import DefaultLayout from "../components/defaultLayout/defaultLayout";
+import SolutionServices from "../components/solutionServices/solutionServices";
 
 const Solutions = () => {
   return (
@@ -12,9 +13,10 @@ const Solutions = () => {
       <DefaultLayout
          h1="Создание сайта для вашего бизнеса"
          h2="Ознакомьтесь с подробностями нашего коммерческого предложения "
-         navWithout={2}
+         navWithout={3}
+         pageId={3}
       >
-
+        <SolutionServices />
       </DefaultLayout>
     </>
   )
