@@ -16,8 +16,11 @@ const Home = () => {
         <meta name="description" content="У нас вы можете заказать сайт под ключ, а также его сопровождение. Предоставляем услуги настройки контекстной рекламы и SEO продвижения." />
       </Head>
 
-      <DefaultLayout>
-         <Header />
+      <DefaultLayout
+         h1="Студия веб-разработки и дизайна."
+         h2="Полный цикл создания и сопровождения сайтов любой сложности" 
+         navWithout={1}
+      >
          <Technologies />
          <Advantages />
          <Services />

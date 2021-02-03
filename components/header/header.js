@@ -7,19 +7,24 @@ import {connect} from "react-redux";
 import {setModalOpen} from "../../store/actions/modalAction";
 import Image from "next/image";
 
-const Header = ({setModalOpen}) => {
-
+const Header = ({setModalOpen, navWithout, h1, h2}) => {
   // const { t } = useTranslation("home");
   const imageRef = useRef();
   const imageMobileRef = useRef();
 
+  function onScroll(){
+    if (imageRef.current) imageRef.current.style.transform =  `translateY(${150 - window.pageYOffset/20}px)`;
+    if (imageMobileRef.current) imageMobileRef.current.style.transform =
+    `translateY(${-window.pageYOffset/15}px) rotateY(-10deg) rotateX(-4deg) skew(-3deg)`;
+  }
+
   useEffect(() => {
     if (document.documentElement.clientWidth > 768){
-      window.addEventListener("scroll", () => {
-        if (imageRef.current) imageRef.current.style.transform =  `translateY(${150 - window.pageYOffset/20}px)`;
-        if (imageMobileRef.current) imageMobileRef.current.style.transform =
-        `translateY(${-window.pageYOffset/15}px) rotateY(-10deg) rotateX(-4deg) skew(-3deg)`;
-      });
+      window.addEventListener("scroll", onScroll);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
     }
   }, []);
 
@@ -30,11 +35,11 @@ const Header = ({setModalOpen}) => {
 
          <div className={style.glass}></div>
 
-         <Nav without={1} />
+         <Nav without={navWithout} />
 
          <div className={style.headerMain}>
-           <h1 className={style.title}>Студия веб-разработки и дизайна.</h1>
-           <h2 className={style.subtitle}>Полный цикл создания и сопровождения сайтов любой сложности</h2>
+           <h1 className={style.title}>{h1}</h1>
+           <h2 className={style.subtitle}>{h2}</h2>
            <div className={style.btnGroup}>
              <Button
                css={{

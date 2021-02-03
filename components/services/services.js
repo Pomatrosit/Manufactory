@@ -29,7 +29,7 @@ const Services = () => {
   const ANIMATE_TO_RIGHT = "0.8s linear 0s 1 normal forwards running fixed-block-to-right";
   let windowHeight;let topValue;let position;let prevPosition;let windowWidth;
 
-  const startCalculate = () => {
+  function startCalculate(){
     windowWidth = document.documentElement.clientWidth;
     windowHeight = document.documentElement.clientHeight;
     topValue = (windowHeight - heightOfFixed)/2;
@@ -38,82 +38,85 @@ const Services = () => {
     fixedRef.current.style.animation = ANIMATE_TO_LEFT;
   }
 
+  function onScroll(){
+    const distanceToTop = staticBlockRef.current.getBoundingClientRect().top;
+
+    if (windowWidth > 1000){
+      const distanceToLastStep = lastStepRef.current.getBoundingClientRect().top;
+      const distanceToTop2 = topValue - distanceToTop;
+
+      if (distanceToTop <= topValue){
+        fixedRef.current.style.transition = "0s";
+        fixedRef.current.style.position="fixed";
+        fixedRef.current.style.top = `${topValue}px`;
+      }
+
+      if (distanceToTop >= topValue){
+        fixedRef.current.style.transition = "0s";
+        fixedRef.current.style.position="absolute";
+        fixedRef.current.style.top = `0`;
+        position="left";
+      }
+
+      if (distanceToLastStep <= topValue){
+        fixedRef.current.style.transition = "0s";
+        fixedRef.current.style.position="absolute";
+        fixedRef.current.style.top = `${lastStepRef.current.offsetTop}px`;
+        position="right";
+      }
+
+      if (distanceToTop2 < 400){
+        hideSecondarySvgs();
+        secondarySvg1Ref.current.style.opacity="1";
+        position="left";
+      } else
+      if (distanceToTop2 >= 400 && distanceToTop2 < 1300){
+        hideSecondarySvgs();
+        secondarySvg2Ref.current.style.opacity="1";
+        position="right";
+      } else
+      if (distanceToTop2 >= 1300 && distanceToTop2 < 2200){
+        hideSecondarySvgs();
+        secondarySvg3Ref.current.style.opacity="1";
+        position="left";
+      } else
+      if (distanceToTop2 >= 2200){
+        hideSecondarySvgs();
+        secondarySvg4Ref.current.style.opacity="1";
+        position="right";
+      }
+
+      if (prevPosition !== position){
+        if (position === "left") {
+          fixedRef.current.style.animation = ANIMATE_TO_LEFT;
+          secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation 1.1s ease forwards")
+        }
+        else {
+          fixedRef.current.style.animation = ANIMATE_TO_RIGHT;
+          secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation2 1.1s ease forwards")
+        }
+      }
+
+      prevPosition = position;
+
+      const triangleTranslate = distanceToTop/15;
+      triangle1.current.style.transform = `translateY(${triangleTranslate}px)`;
+      triangle2.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
+      triangle3.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
+      triangle4.current.style.transform = `translateY(${triangleTranslate}px) rotate(180deg)`;
+    }
+  }
+
   useEffect(() => {
     startCalculate();
 
-    window.addEventListener("scroll", e => {
-      const distanceToTop = staticBlockRef.current.getBoundingClientRect().top;
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("resize", startCalculate);
 
-      if (windowWidth > 1000){
-        const distanceToLastStep = lastStepRef.current.getBoundingClientRect().top;
-        const distanceToTop2 = topValue - distanceToTop;
-
-        if (distanceToTop <= topValue){
-          fixedRef.current.style.transition = "0s";
-          fixedRef.current.style.position="fixed";
-          fixedRef.current.style.top = `${topValue}px`;
-        }
-
-        if (distanceToTop >= topValue){
-          fixedRef.current.style.transition = "0s";
-          fixedRef.current.style.position="absolute";
-          fixedRef.current.style.top = `0`;
-          position="left";
-        }
-
-        if (distanceToLastStep <= topValue){
-          fixedRef.current.style.transition = "0s";
-          fixedRef.current.style.position="absolute";
-          fixedRef.current.style.top = `${lastStepRef.current.offsetTop}px`;
-          position="right";
-        }
-
-        if (distanceToTop2 < 400){
-          hideSecondarySvgs();
-          secondarySvg1Ref.current.style.opacity="1";
-          position="left";
-        } else
-        if (distanceToTop2 >= 400 && distanceToTop2 < 1300){
-          hideSecondarySvgs();
-          secondarySvg2Ref.current.style.opacity="1";
-          position="right";
-        } else
-        if (distanceToTop2 >= 1300 && distanceToTop2 < 2200){
-          hideSecondarySvgs();
-          secondarySvg3Ref.current.style.opacity="1";
-          position="left";
-        } else
-        if (distanceToTop2 >= 2200){
-          hideSecondarySvgs();
-          secondarySvg4Ref.current.style.opacity="1";
-          position="right";
-        }
-
-        if (prevPosition !== position){
-          if (position === "left") {
-            fixedRef.current.style.animation = ANIMATE_TO_LEFT;
-            secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation 1.1s ease forwards")
-          }
-          else {
-            fixedRef.current.style.animation = ANIMATE_TO_RIGHT;
-            secondarySvgs.forEach(svg => svg.current.style.animation="secondary-image-animation2 1.1s ease forwards")
-          }
-        }
-
-        prevPosition = position;
-
-        const triangleTranslate = distanceToTop/15;
-        triangle1.current.style.transform = `translateY(${triangleTranslate}px)`;
-        triangle2.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
-        triangle3.current.style.transform = `translateY(${triangleTranslate}px) rotate(90deg)`;
-        triangle4.current.style.transform = `translateY(${triangleTranslate}px) rotate(180deg)`;
-      }
-    });
-
-
-    window.addEventListener("resize", () => {
-      startCalculate();
-    })
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", startCalculate);
+    }
   }, []);
 
 

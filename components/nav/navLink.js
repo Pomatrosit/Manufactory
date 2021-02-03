@@ -1,7 +1,8 @@
 import style from "./nav.module.css";
 import {useRef} from "react";
+import Link from "next/link";
 
-const NavLink = ({title}) => {
+const NavLink = ({title, href}) => {
 
   const shapeRef = useRef();
 
@@ -14,10 +15,12 @@ const NavLink = ({title}) => {
   }
 
   return(
-      <li className={style.link} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-         {title}
-         <div className={style.linkShape} ref = {shapeRef}></div>
-      </li>
+      <Link href={href}>
+        <a className={style.link} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+           {title}
+           <div className={style.linkShape} ref = {shapeRef}></div>
+        </a>
+      </Link>
   )
 }
 

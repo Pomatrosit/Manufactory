@@ -2,12 +2,14 @@ import {connect} from "react-redux";
 import {setModalOpen} from "../../store/actions/modalAction";
 import Modal from "../NextModal/NextModal";
 import Form from "../NextForm/NextForm";
+import Header from "../header/header";
 import Footer from "../footer/footer";
 
-const DefaultLayout = ({children, isModalOpen, setModalOpen}) => {
+const DefaultLayout = ({children, isModalOpen, setModalOpen, navWithout, h1, h2}) => {
 
   return(
     <>
+      <Header navWithout={navWithout} h1={h1} h2={h2}/>
       {children}
       <Footer />
 
