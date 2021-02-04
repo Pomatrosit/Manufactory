@@ -24,13 +24,15 @@ const Reviews = () => {
   let reviewWidth=376;
 
   const startCalculations = () => {
-    if (document.documentElement.clientWidth < 500) reviewWidth = 280; else reviewWidth=376;
-    const length = trackRef.current.children.length;
-    trackRef.current.style.width = `${reviewWidth*length + (length - 1)*50}px`;
-    trackRef.current.style.transform="translateX(0px)";
-    pacmanRef.current.style.transform = "translateX(0px)";
-    maxTrackTransform = wrapperRef.current.offsetWidth - trackRef.current.offsetWidth;
-    maxPacmanTransform = wrapperRef.current.offsetWidth - 70;
+    let length;
+    if (trackRef.current){
+      length = trackRef.current.children.length;
+      trackRef.current.style.width = `${reviewWidth*length + (length - 1)*50}px`;
+      trackRef.current.style.transform="translateX(0px)";
+      pacmanRef.current.style.transform = "translateX(0px)";
+      maxTrackTransform = wrapperRef.current.offsetWidth - trackRef.current.offsetWidth;
+      maxPacmanTransform = wrapperRef.current.offsetWidth - 70;
+    }
   }
 
   useEffect(() => {
@@ -179,50 +181,49 @@ const Reviews = () => {
         </div>
 
         <div className={style.reviews__track}
-             ref={trackRef}
-             onMouseDown={trackMouseDownHandler}
-             onTouchStart={trackTouchStartHandler}
-        >
-          <ReviewItem width={reviewWidth}/>
-          <ReviewItem width={reviewWidth}/>
-          <ReviewItem width={reviewWidth}/>
-          <ReviewItem width={reviewWidth}/>
-
+               ref={trackRef}
+               onMouseDown={trackMouseDownHandler}
+               onTouchStart={trackTouchStartHandler}
+          >
+            <ReviewItem width={reviewWidth}/>
+            <ReviewItem width={reviewWidth}/>
+            <ReviewItem width={reviewWidth}/>
+            <ReviewItem width={reviewWidth}/>
         </div>
 
         <div className={style.pacman_line}>
 
-          <div className={style.pacman}
-               ref={pacmanRef}
-               onMouseDown={pacmanMouseDownHandler}
-               onTouchStart={pacmanTouchStartHandler}
-          >
-            <div className={style.pacman__wrap} ref={pacmanWrapRef}>
-                <div className={style.pacman__after}
-                     ref={packmanAfterRef}
-                     onMouseEnter={onPacmanMouseEnter}
-                     onMouseLeave={onPacmanMouseLeave}>
-                </div>
-                <div className={style.pacman__before}
-                     ref={packmanBeforeRef}
-                     onMouseEnter={onPacmanMouseEnter}
-                     onMouseLeave={onPacmanMouseLeave}>
-                </div>
+            <div className={style.pacman}
+                 ref={pacmanRef}
+                 onMouseDown={pacmanMouseDownHandler}
+                 onTouchStart={pacmanTouchStartHandler}
+            >
+              <div className={style.pacman__wrap} ref={pacmanWrapRef}>
+                  <div className={style.pacman__after}
+                       ref={packmanAfterRef}
+                       onMouseEnter={onPacmanMouseEnter}
+                       onMouseLeave={onPacmanMouseLeave}>
+                  </div>
+                  <div className={style.pacman__before}
+                       ref={packmanBeforeRef}
+                       onMouseEnter={onPacmanMouseEnter}
+                       onMouseLeave={onPacmanMouseLeave}>
+                  </div>
+              </div>
             </div>
-          </div>
 
-          <div className={style.pacman__square} ref={point1}></div>
-          <div className={style.pacman__square} ref={point2}></div>
-          <div className={style.pacman__square} ref={point3}></div>
-          <div className={style.pacman__square} ref={point4}></div>
-          <div className={style.pacman__square} ref={point5}></div>
-          <div className={style.pacman__square} ref={point6}></div>
-          <div className={style.pacman__square} ref={point7}></div>
-          <div className={style.pacman__square} ref={point8}></div>
-          <div className={style.pacman__square} ref={point9}></div>
-          <div className={style.pacman__square} ref={point10}></div>
-          <div className={style.pacman__square} ref={point11}></div>
-          <div className={style.pacman__square} ref={point12}></div>
+            <div className={style.pacman__square} ref={point1}></div>
+            <div className={style.pacman__square} ref={point2}></div>
+            <div className={style.pacman__square} ref={point3}></div>
+            <div className={style.pacman__square} ref={point4}></div>
+            <div className={style.pacman__square} ref={point5}></div>
+            <div className={style.pacman__square} ref={point6}></div>
+            <div className={style.pacman__square} ref={point7}></div>
+            <div className={style.pacman__square} ref={point8}></div>
+            <div className={style.pacman__square} ref={point9}></div>
+            <div className={style.pacman__square} ref={point10}></div>
+            <div className={style.pacman__square} ref={point11}></div>
+            <div className={style.pacman__square} ref={point12}></div>
         </div>
 
       </div>

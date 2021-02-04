@@ -17,7 +17,7 @@ const ReviewItem = ({img, text, title, width}) => {
 
   return(
     <figure className={style.reviewItem}
-            style={{width}}
+            style={{width: width || "auto"}}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}>
 

@@ -6,9 +6,27 @@ import Advantages from "../components/advantages/advantages";
 import Services from "../components/services/services";
 import Portfolio from "../components/portfolio/portfolio";
 import Reviews from "../components/reviews/reviews";
+import MobileReviews from "../components/reviews/mobileReviews";
 import Question from "../components/question/question";
+import {useState, useEffect} from "react";
 
 const Home = () => {
+
+  const [isMobile, setMobile] = useState(false);
+
+  function onResize(){
+    if (document.documentElement.clientWidth > 768) setMobile(false);
+    else setMobile(true);
+  }
+
+  useEffect(() => {
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize);
+    }
+  }, [])
+
   return (
     <>
       <Head>
@@ -26,7 +44,11 @@ const Home = () => {
          <Advantages />
          <Services />
          <Portfolio />
-         <Reviews />
+         {
+           isMobile
+             ? <MobileReviews />
+             : <Reviews />
+         }
          <Question />
       </DefaultLayout>
     </>
