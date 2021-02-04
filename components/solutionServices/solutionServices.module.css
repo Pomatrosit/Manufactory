@@ -1,3 +1,57 @@
 .services{
   margin-top:360px;
+  height:3000px;
+  position:relative;
 }
+
+.services__main{
+  background: linear-gradient(178.5deg, #F4F4F4 1.28%, #FFFFFF 98.72%);
+  padding:129px 110px 80px 110px;
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+  z-index:0;
+}
+
+.card{
+  position:absolute;
+  width:460px;
+  padding:45px 50px 0px 50px;
+  background: #fff;
+  border-radius: 10px;
+  right:110px;
+}
+
+.card__title{
+  font-family: 'SF Pro Display';
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 0.01em;
+  color: #200E32;
+  margin-bottom:25px;
+}
+
+.card__text{
+  font-family: 'Geometria Regular';
+  font-size: 18px;
+  line-height: 150%;
+  color: #736C7A;
+  max-width:330px;
+  height:130px;
+}
+
+.card__number{
+  position:absolute;
+  top:57px;
+  right:49px;
+  font-family: 'Geometria Regular';
+  font-weight: 500;
+  font-size: 14px;
+  color: #000000;
+}
+
+.card1{top:180px}
+.card2{top:570px}
+.card3{top:960px}
+.card4{top:1350px}
+.card5{top:1740px}

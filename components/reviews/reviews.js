@@ -173,7 +173,7 @@ const Reviews = () => {
 
         <div className={style.reviews__top}>
           <h3 className="section__subtitle">Отзывы</h3>
-          <h2 className="section__title">Нам доверяют</h2>\
+          <h2 className="section__title">Нам доверяют</h2>
           <DecorativeSquare color="purple" top="0" left="0"/>
           <DecorativeSquare color="purple" top="40px" left="40px"/>
           <DecorativeSquare color="purple" top="-40px" left="-40px"/>
@@ -235,6 +235,7 @@ const Reviews = () => {
           width={615}
           height={565}
           quality={100}
+          priority="eager"
         />
       </div>
 

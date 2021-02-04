@@ -55,6 +55,7 @@ const MobileReviews = () => {
             width={615}
             height={565}
             quality={100}
+            priority="eager"
           />
         </div>
 
