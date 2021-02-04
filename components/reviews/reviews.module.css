@@ -121,9 +121,22 @@
   }
   .mobileReviews__swiper{
     padding-bottom:150px;
+    margin-right:-2.5%;
   }
   .reviewItem{
     margin:0 20px;
+  }
+}
+
+@media screen and (max-width:600px){
+  .reviewItem__text{
+    height:150px;
+  }
+  .mobileReviews__swiper{
+    padding-bottom:50px;
+  }
+  .reviews__top{
+    padding-bottom:0;
   }
 }
 
@@ -132,7 +145,7 @@
     padding:0 5px;
   }
   .reviewItem__text{
-    height:150px;
+    height:180px;
   }
   .reviews__track{
     margin-bottom:80px;

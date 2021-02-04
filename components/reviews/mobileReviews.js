@@ -3,8 +3,25 @@ import DecorativeSquare from "../decorative/decorativeSquare";
 import ReviewItem from "./reviewItem";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import {useEffect, useState} from "react";
 
 const MobileReviews = () => {
+
+  const [slidesPerView, setSlidesPerView] = useState(document.documentElement.clientWidth > 450 ? 1.5 : 1);
+
+  const onResize = () => {
+    if (document.documentElement.clientWidth > 450) setSlidesPerView(1.5);
+    else setSlidesPerView(1);
+    console.log("resize");
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize);
+    }
+  }, [])
+
   return(
     <section className={style.reviews}>
       <div className="app-wrapper">
@@ -21,9 +38,8 @@ const MobileReviews = () => {
         <div className={style.mobileReviews__swiper}>
           <Swiper
              spaceBetween={0}
-             slidesPerView={2}
-             onSlideChange={() => console.log('slide change')}
-             onSwiper={(swiper) => console.log(swiper)}
+             slidesPerView={slidesPerView}
+             style={{padding:"25px 0"}}
           >
                <SwiperSlide><ReviewItem /></SwiperSlide>
                <SwiperSlide><ReviewItem /></SwiperSlide>
