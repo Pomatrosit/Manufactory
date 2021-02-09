@@ -1,10 +1,7 @@
 import Head from 'next/head';
 import DefaultLayout from "../components/defaultLayout/defaultLayout";
-import SolutionServices from "../components/solutionServices/solutionServices";
-import SolutionOffers from "../components/solutionOffers/solutionOffers";
-import Steps from "../components/steps/steps";
 
-const Solutions = () => {
+const Portfolio = () => {
   return (
     <>
       <Head>
@@ -13,17 +10,14 @@ const Solutions = () => {
       </Head>
 
       <DefaultLayout
-         h1="Создание сайта для вашего бизнеса"
-         h2="Ознакомьтесь с подробностями нашего коммерческого предложения "
-         navWithout={3}
-         pageId={3}
+         h1="Страница Портфолио"
+         h2="Страница Портфолио"
+         navWithout={2}
+         pageId={2}
       >
-        <SolutionServices />
-        <SolutionOffers />
-        <Steps />
       </DefaultLayout>
     </>
   )
 }
 
-export default Solutions
+export default Portfolio

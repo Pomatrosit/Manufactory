@@ -6,6 +6,7 @@
 .reviews__top{
   padding:120px 0 187px 0;
   background: linear-gradient(178.5deg, #F4F4F4 1.28%, #FFFFFF 98.72%);
+  border-radius:50px;
 }
 
 .reviews__track{

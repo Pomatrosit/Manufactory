@@ -7,7 +7,7 @@ const Nav = ({without, paddingTop}) => {
 
   let links = [
     {id:1, title:"Главная", href:"/"},
-    {id:2, title:"Портфолио", href:"/potfolio"},
+    {id:2, title:"Портфолио", href:"/portfolio"},
     {id:3, title:"Решения", href:"/solutions"},
     {id:4, title:"Контакты", href:"/contacts"}
   ]

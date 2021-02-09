@@ -1,0 +1,61 @@
+.offers{
+  padding-bottom:250px;
+}
+
+.offers__main{
+  padding:190px 0 0 450px;
+  position:relative;
+  z-index:1;
+}
+
+.card{
+  background: #FFFFFF;
+  border: 1px solid rgba(73, 42, 100, 0.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  font-family: 'SF Pro Display';
+  display:flex;
+  margin-bottom:25px;
+}
+
+.card__img{
+  width:150px;
+  border-right:1px solid rgba(73, 42, 100, 0.1);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__content{
+  padding:47px;
+}
+
+.card__title{
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: #200E32;
+  margin-bottom: 20px;
+}
+
+.card__text{
+  font-size: 16px;
+  color: #726F81;
+}
+
+.offers__background{
+  background: linear-gradient(178.5deg, #FBFBFB 1.28%, #FDFBFF 98.72%);
+  transform: rotate(50deg);
+  position:absolute;
+  top:250px;
+  left:250px;
+  width:785px;
+  height:785px;
+  z-index:0;
+}
+
+.offers__image{
+  position:absolute;
+  top:0;
+  left:0;
+}
