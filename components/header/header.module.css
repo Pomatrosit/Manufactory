@@ -168,30 +168,40 @@
 
 @media screen and (max-width:500px){
   .header__mobile{
-    height:80%;
-    top:20px;
+    height:95%;
+    top:0px;
   }
   .points1{
     right:20px;
     top:770px;
   }
+  .glass{
+    top:10px;
+  }
+  .headerMain{
+    margin: 80px 20px 0 20px;
+  }
+  .title{
+    font-size: 36px;
+    line-height: 50px;
+  }
+  .headerImg{
+    height:300px;
+    transform:translateY(80px);
+  }
 }
 
 @media screen and (max-width:450px){
   .header__mobile{
-    height:70%;
-    top:50px;
+    height:90%;
+    top:0px;
   }
 }
 
 @media screen and (max-width:400px){
   .header__mobile{
-    height:60%;
-    top:70px;
-  }
-  .title{
-    font-size: 40px;
-    line-height: 50px;
+    height:80%;
+    top:20px;
   }
 }
 

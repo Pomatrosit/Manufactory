@@ -1,5 +1,6 @@
 import style from "./NextModal.module.css";
 import {useEffect, useRef} from "react";
+import {setScrollAvailable, setScrollUnavailable} from "../../utils";
 
 const NextModal = ({children, css, setModalOpen}) => {
 
@@ -10,22 +11,12 @@ const NextModal = ({children, css, setModalOpen}) => {
   }
 
   const close = () => {
-    document.body.style.overflow="auto";
-    document.body.style.position="relative";
-    document.body.style.top = `0px`;
-    window.scrollTo(0, document.body.dataset.scrollY);
+    setScrollAvailable();
     setModalOpen(false);
   }
 
   useEffect(() => {
-    document.body.dataset.scrollY = getBodyScrollTop();
-    document.body.style.overflowY="scroll";
-    document.body.style.position="fixed";
-    document.body.style.top="0";
-    document.body.style.right="0";
-    document.body.style.left="0";
-    document.body.style.bottom="0";
-    document.body.style.top = `-${document.body.dataset.scrollY}px`;
+    setScrollUnavailable();
   },[]);
 
   return(

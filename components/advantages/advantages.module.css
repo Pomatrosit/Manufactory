@@ -64,5 +64,9 @@
 @media screen and (max-width:700px){
   .servicesItem{
     width:100%;
+    margin-bottom:20px;
+  }
+  .advantages{
+    padding-top:100px;
   }
 }

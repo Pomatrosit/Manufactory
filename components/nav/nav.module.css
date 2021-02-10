@@ -56,10 +56,101 @@
 }
 
 .burger{
-  width:50px;
-  height:50px;
-  border:1px solid tomato;
   display:none;
+}
+
+.burger__icon{
+  width:25px;
+  height:25px;
+  position:Relative;
+  cursor:pointer;
+}
+
+.burger__line{
+  display:block;
+  position:absolute;
+  right:0;
+  top:0;
+  background: #fff;
+  width:22px;
+  height:2px;
+  border-radius:1px;
+}
+
+.burger__icon .burger__line:nth-child(2){
+  top:10px;
+  width:12px;
+}
+
+.burger__icon .burger__line:last-child{
+  top:20px;
+}
+
+.mobileMenu{
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  overflow:scroll;
+  background: linear-gradient(250deg, #1B162B 0.6%, #1D1837 100%);
+  z-index:50;
+  width:360px;
+  padding:50px 30px 30px 30px;
+  transform-origin: right;
+  animation:open-mobile-menu 0.5s ease-in-out forwards;
+}
+
+.mobileMenu__content{
+  opacity:0;
+  animation:show-mobile-content 1s ease-in-out forwards;
+}
+
+.mobileOverlay{
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index:49;
+}
+
+.mobileMenu__top{
+  display:flex;
+  align-items:Center;
+  justify-content:space-between;
+  padding-bottom:25px;
+  border-bottom:1px solid #C4C4C4;
+  margin-bottom:50px;
+}
+
+.mobileMenu__title{
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+.mobileMenu__link{
+  display:block;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin-bottom:30px;
+}
+
+.mobileMenu__links{
+  padding-bottom:30px;
+  border-bottom:1px solid #C4C4C4;
+  margin-bottom:40px;
+}
+
+.mobileMenu__buttons{
+  height:120px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media screen and (max-width:1600px){
@@ -81,4 +172,21 @@
   .logo img{
     display:none;
   }
+  .mobileMenu{
+    width:100%;
+  }
+  .nav{
+    padding:40px 20px 0 20px;
+  }
+}
+
+@keyframes open-mobile-menu{
+  from{transform:scaleX(0)}
+  to{transform:scaleX(1)}
+}
+
+@keyframes show-mobile-content{
+  0%{opacity:0}
+  50%{opacity:0}
+  100%{opacity:1}
 }

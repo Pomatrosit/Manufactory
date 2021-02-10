@@ -1,9 +1,17 @@
 import NavLink from "./navLink";
 // import LanguageSwitcher from "./languageSwitcher";
 import style from "./nav.module.css";
-import Logo from "../svgComponents/logo"
+import Logo from "../svgComponents/logo";
+import MobileMenu from "./mobileMenu";
+import {useState} from "react";
 
 const Nav = ({without, paddingTop}) => {
+
+  const [isBurgerOpen, setBurgerOpen] = useState(false);
+
+  const setMobileMenuOpen = () => {
+    setBurgerOpen(true)
+  }
 
   let links = [
     {id:1, title:"Главная", href:"/"},
@@ -34,6 +42,15 @@ const Nav = ({without, paddingTop}) => {
       </ul>
 
       <div className={style.burger}>
+        <div className={style.burger__icon} onClick = {setMobileMenuOpen}>
+          <span className={style.burger__line}></span>
+          <span className={style.burger__line}></span>
+          <span className={style.burger__line}></span>
+        </div>
+
+        {
+          isBurgerOpen && <MobileMenu setBurgerOpen={setBurgerOpen} links={links}/>
+        }
 
       </div>
 

@@ -173,6 +173,16 @@
   }
 }
 
+@media screen and (max-width:700px){
+  .servicesTop{
+    padding-top:20px;
+  }
+  .topBlock{
+    padding:100px 0 50px 0;
+  }
+}
+
+
 @media screen and (max-width:600px){
   .mainBlock__mobile2{
     bottom:0;
@@ -193,6 +203,8 @@
   .mainBlock__title{
     margin-bottom:30px;
   }
+  .triangle1{top:430px;}
+  .triangle2{top:1400px;}
 }
 
 @media screen and (max-width:400px){
