@@ -46,6 +46,9 @@ const Header = ({setModalOpen, navWithout, h1, h2, pageId}) => {
            <h1 className={style.title}>{h1}</h1>
            <h2 className={style.subtitle}>{h2}</h2>
 
+           { // data-aos="zoom-in-down" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200"
+           }
+
            { pageId === 1 &&
              <div className={style.btnGroup}>
                <Button
@@ -90,8 +93,10 @@ const Header = ({setModalOpen, navWithout, h1, h2, pageId}) => {
          {
            pageId === 1 &&
            <div className={style.headerImg} ref= {imageRef}>
-             <img className={style.header__desktop} src="/img/header-desktop.svg" alt="manufactory-desktop"/>
-             <img className={style.header__mobile} ref={imageMobileRef}src="/img/header-mobile.svg" alt="manufactory-mobile"/>
+             <img className={style.header__desktop}
+                src="/img/header-desktop.svg" alt="manufactory-desktop"/>
+             <img className={style.header__mobile} ref={imageMobileRef}
+                src="/img/header-mobile.svg" alt="manufactory-mobile"/>
            </div>
          }
 

@@ -1,5 +1,6 @@
 .offers{
   padding-bottom:250px;
+  overflow: hidden;
 }
 
 .offers__main{

@@ -3,6 +3,8 @@ import DefaultLayout from "../components/defaultLayout/defaultLayout";
 import SolutionServices from "../components/solutionServices/solutionServices";
 import SolutionOffers from "../components/solutionOffers/solutionOffers";
 import Steps from "../components/steps/steps";
+import Design from "../components/design/design";
+import SolutionAdvantages from "../components/solutionAdvantages/solutionAdvantages";
 
 const Solutions = () => {
   return (
@@ -21,6 +23,8 @@ const Solutions = () => {
         <SolutionServices />
         <SolutionOffers />
         <Steps />
+        <Design />
+        <SolutionAdvantages />
       </DefaultLayout>
     </>
   )

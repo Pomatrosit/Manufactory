@@ -12,8 +12,17 @@ import store from "../store/store";
 import Head from "next/head";
 import NextNprogress from 'nextjs-progressbar';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import {useEffect} from "react";
+
 
 function MyApp({ Component, pageProps }) {
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Provider store={store}>
 

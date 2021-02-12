@@ -1,5 +1,6 @@
 .steps{
   font-family: 'SF Pro Display';
+  margin-bottom:100px;
 }
 
 .steps__offer{
@@ -10,7 +11,6 @@
 
 .steps__main{
   position:relative;
-  margin-bottom:200px;
 }
 
 .step{
