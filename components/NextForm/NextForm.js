@@ -68,9 +68,21 @@ const NextForm = ({css, title}) => {
     if (isFormValid()) {
       setLoading(true);
       /// КАКОЙ ТО ФЕТЧИНГ ВМЕСТО ТАЙМАУТА
-      setTimeout(() => {
-          setTranslate("translateX(-50%)");
-      },3000);
+      // setTimeout(() => {
+      //     setTranslate("translateX(-50%)");
+      // },3000);
+      fetch('https://manufacto-d2896.firebaseio.com/calls.json', {
+        method: 'POST',
+        body: JSON.stringify({
+          name, phone, email
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => res.json())
+      .then(() => setTranslate("translateX(-50%)"))
+
     } else{
       setErrorFields();
       setError(true);
@@ -174,7 +186,7 @@ const NextForm = ({css, title}) => {
 
            </div>
 
-           <div style = {{padding:css.padding || "0"}} className={style.step2}>
+           <div style = {{padding:css.padding || "0", fontSize:"20px"}} className={style.step2}>
               Спасибо, ваши данные упешно отправлены, мы свяжемся с вами через несколько минут.
            </div>
        </div>
