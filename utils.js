@@ -2,7 +2,7 @@ function getBodyScrollTop(){
   return self.pageYOffset || (document.documentElement && document.documentElement.ScrollTop) || (document.body && document.body.scrollTop);
 }
 
-export function setScrollUnavailable(){
+export function setScrollUnavailable () {
   const body = document.body;
   body.dataset.scrollY = getBodyScrollTop();
   body.style.overflowY="scroll";
@@ -14,7 +14,7 @@ export function setScrollUnavailable(){
   body.style.top = `-${document.body.dataset.scrollY}px`;
 }
 
-export function setScrollAvailable(){
+export function setScrollAvailable () {
   const body = document.body;
   body.style.overflow="auto";
   body.style.position="relative";
